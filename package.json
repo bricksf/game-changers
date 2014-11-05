@@ -1,0 +1,19 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "devDependencies": {
+    "flightplan": "*",
+    "gulp": "*",
+    "gulp-replace": "*",
+    "gulp-less": "*",
+    "gulp-uglify": "*",
+    "gulp-jshint": "*",
+    "gulp-concat": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-minify-css": "*",
+    "gulp-browserify": "*",
+    "gulp-livereload": "*",
+    "gulp-inject": "*",
+    "tiny-lr": "*"
+  }
+}

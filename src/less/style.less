@@ -1,0 +1,506 @@
+@import "reset.less";
+@import "variables.less";
+@import "typography.less";
+@import "elements.less";
+@import "forms.less";
+@import "menus.less";
+@import "wordpress.less";
+@import "slick.less";
+@import "grid.less"; 
+
+
+h1,h2,h3,h4,h5,h6,p{font-weight: 200;}
+b,strong{font-weight:600;}
+h1{font-size: 2em;}
+h2{font-size: 22px;}
+h3{font-size: 20px;}
+h4{font-size: 18px;}
+h5{font-size: 16px;}
+h6{font-size: 14px;}
+
+h2{
+	color:@red;
+	text-transform: uppercase;
+	margin:10px 0;
+   	font-family: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 400;
+   	letter-spacing: 1px;		
+}
+
+a{
+	color:@red;
+	text-decoration:none;
+	&:hover{
+		text-decoration:underline;
+	}
+}
+
+.center{
+	text-align: center;
+}
+.bottom-margin{
+	margin-bottom: 40px !important;
+}
+.grid{
+	p{
+		margin-right:20px;
+	}
+}
+p.large{
+	font-size: 18px;
+	margin:0;
+}
+.colorred{
+	color:@red;
+}
+.font-cap{
+	text-transform: capitalize;
+}
+.font-serif{
+	font-family: "Georgia", serif;
+}
+.font-san-serif{
+	font-family: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+
+.content-area{
+	max-width: 1000px;
+	margin:0 auto;
+	position: relative;
+	&.pad{
+		padding:20px;
+	}
+	.blog{
+		padding:40px 0;
+		width:70%;
+		max-width: 700px;
+		float:left;
+		box-sizing: border-box;
+		padding-right:40px;
+		article{
+			padding-bottom:60px;
+			.feature_image{
+				padding-bottom:20px;
+				width:100%;
+			}
+			&:first-child{
+				border-top:none;
+				padding-top: 0;
+				margin-top:0;
+			}
+			border-top: 1px solid lighten(@midgray, 20%);
+			padding-top:40px;
+		}
+		.entry-title{
+			font-weight: 400;
+		}
+	}
+	.sidebar{
+		margin:40px 0;
+		width:30%;
+		max-width: 300px;
+		float:left;
+		padding-left:20px;
+		box-sizing: border-box;
+		border-left:1px solid lighten(@midgray, 20%);
+		h1{
+			border-top:1px solid lighten(@midgray, 20%);
+			padding:10px 0;
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: 400;
+		}
+		ul{
+			padding:0;
+			margin:0;
+			list-style: none;
+		}
+	}
+}
+
+.graybg{
+	background-color:@lightgray;
+}
+.watermark{
+	background-image:url(../img/watermark.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.container.pad {
+	margin:60px auto;
+}
+.pad{
+	padding:60px auto;
+}
+.content {
+	overflow:hidden;
+}
+
+.site-header{
+	background-color: @red;
+	color: @white;
+	a,
+	a:visited{
+		color: @white;
+		text-decoration: none;
+	}
+	.site-branding{
+		border-bottom:1px solid #c5555f;
+		border-bottom:1px solid rgba(255,255,255,0.25);
+		.brand-wrapper{
+			max-width: 1000px;
+			padding:20px;
+			margin:0 auto;
+			overflow: hidden;		
+		}
+		h1.site-title{
+			float:left;
+			margin:15px 0 0 0;
+			width:242px;
+			height:41px;
+			display: block;
+			clear: none;
+			a{
+				text-indent: -9999px;
+				background-image: url(../img/game-changers-outline-logo.png);
+				background-repeat: no-repeat;
+				width:242px;
+				height:41px;
+				display: block;
+				margin:0;
+				font-weight: 100;
+			}
+		}
+		h2{	
+			text-indent: -9999px;
+			background-image: url(../img/logo.png);
+			background-repeat: no-repeat;
+			width:180px;
+			height:46px;
+			display: inline-block;
+			float:right;
+			clear: none;
+			margin:10px 0 0 0;
+		}
+	}
+}
+
+.site-footer{
+	text-align: center;
+	background-color: @red;
+	color: @white;
+	a,
+	a:visited{
+		color: @white;
+		text-decoration: none;
+	}
+	.site-info{
+		max-width: 1000px;
+		padding:20px;
+		margin:0 auto;
+	}
+	.logo{
+		text-align: center;
+		padding:20px 0;
+		img{
+			width:200px;
+		}
+	}
+}
+.social-footer{
+	padding: 40px 0;
+	background-color: @darkgray;
+	color: @lightgray;
+	h4{
+		text-transform: uppercase;
+	}
+}
+
+.home{
+	.entry-content{
+		text-align: center;
+		a {
+			color: @red;
+		}
+	}
+}
+.pad{
+	padding:20px;
+}
+
+.slick {
+	.slick-slide {
+		display:block;
+		height:400px;
+		background: no-repeat center center;
+		background-size: cover;
+	}
+}
+.hero{
+	display:block;
+	height:400px;
+	background: no-repeat center center;
+	background-size: cover;
+}
+.text-block{
+	font-family: "Georgia", serif;
+	width:300px;
+	padding:10px 20px 20px 20px;
+	margin-top:40px;
+	background-color: rgb(0,0,0);
+	background-color:rgba(0,0,0,0.7);
+	color:@white;
+	float:left;
+	h4{
+		margin-top:0;
+		margin-bottom:1em;
+	}
+	&.right{
+		float:right;
+	}
+	a.link{
+		color:white;
+	}
+}
+
+.feature{
+	width:100%;
+
+	.feature-block{
+
+		height:480px;
+		background: no-repeat center center;
+		background-size: cover;
+		.text-block{
+			&.force-right{
+				float:right;
+			}
+		}
+		.quote{
+			font-size: 18px;
+			&:before {
+			    top: 0;
+			    left: 0;
+			    content: "\201C";
+			}
+			&:after {
+			    top: 0;
+			    right: 0;
+			    content: "\201D";
+			}
+		}
+
+		.name{
+			text-transform: uppercase;
+		   	font-family: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif;
+		   	font-weight: 400;
+		}
+		.title{
+			font-family: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif; 
+			font-weight: 400;
+		}
+	}
+}
+
+.people-list{
+	text-align:center;
+	padding:20px 0;
+	.person{
+		transition: opacity 0.2s;
+		&.dim{
+			opacity:0.2;
+		}
+	}
+}
+
+.blockquote{
+	border-top:1px solid @lightgray;
+	border-bottom:1px solid @lightgray;
+	color: @red;
+	font-size: 24px;
+	padding:20px 20% 20px 0;
+	margin-bottom:20px;
+}
+.middle-block{
+	background-color:@lightgray;
+	padding:20px;
+	margin:20px 0;
+	a{
+		color: @red;
+	}
+}
+
+/* People Gird Nav */
+.people-select{
+	text-align:center;
+	list-style: none;
+	margin:0;
+	padding:0;
+	li{
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 13px;
+		letter-spacing: .15em;
+		&:after{
+			content: '/';
+			margin: 0 6px;
+		}
+		&:last-child{
+			&:after{
+				content: '';
+			}
+		}
+		&.active{
+			a{
+				color: @red !important;
+			}			
+		}
+		a{
+			color: @midgray !important;
+		}
+	}
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 240px;
+	height: 240px;
+}
+
+/* flip speed goes here */
+.flipper {
+	display:block;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	color:@white !important;
+	position: relative;
+
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 220px;
+	height: 220px;
+	margin:10px;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+	img{
+		width:100%;
+		height:100%;
+	}
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	background-color:@red;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+.homepage-blog{
+	text-align: left;
+	padding:20px 0;
+	.blog-item{
+		overflow: hidden;
+		padding:20px;
+		.blog-image{
+			float:left;
+			width:33.3333%;
+			height:200px;
+			background-color: @darkgray;
+			background: no-repeat center center;
+			background-size: cover;
+			img{
+				width:100%;
+				height:100%;
+			}
+		}
+		&:nth-child(odd){
+			background-color:@lightgray;
+		}
+		
+		.body{
+			float:left;
+			width:66.6666%;
+			padding-left:20px;
+			box-sizing: border-box;
+			h4{
+				color:@red;
+				text-transform: uppercase;
+				font-weight: 500;
+			}
+			time{
+				font-size:0.8em;
+			}
+			.excerpt{
+				padding:20px 0 0 0;
+			}
+		}
+	}
+}
+.button {
+	background-color:@white;
+	color:@red;
+	transition: all 0.2s;
+	border:1px solid @white;
+	padding:6px 12px;
+	text-decoration: none;
+	&:hover{
+		background-color:rgba(255,255,255,0.3);
+		color:@white;
+	}
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@media only screen and (max-width : 768px) {
+}
+@media only screen and (min-width : 768px) {
+}
+@media only screen and (min-width : 1024px) {
+}
+@media only screen and (min-width : 1400px) {
+}
+@media only screen and (min-width : 1600px) {
+}
+@media only screen and (min-width : 2400px) {
+}
+
+/* iPhone 4 ----------- */
+@mediaonly screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

@@ -1,0 +1,168 @@
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	max-width: 1000px;
+	padding: 0;
+	margin:0 auto;
+	font-family: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 400;	
+
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	margin-left:0px;
+}
+.home{
+
+}
+.main-navigation li {
+	float: left;
+	position: relative;
+	margin:0 0px 0 0;
+	padding:8px 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: 100;
+	&:nth-child(7){
+		float:right;
+		a{
+			display: block;
+			box-sizing: border-box;
+			background-color:@black;
+			border:1px solid @black;
+			transition: all 0.2s;
+			&:hover{
+				background-color:rgba(0,0,0,0.3);
+				color:@white;
+			}
+		}
+	}
+	&:nth-child(6){
+		float:right;
+		margin:0 0 0 10px;
+		a{
+			background-color:@white;
+			color:@red !important;
+			transition: all 0.2s;
+			border:1px solid @white;
+			&:hover{
+				background-color:rgba(255,255,255,0.3);
+				color:@white;
+			}
+		}
+	}
+}
+
+.main-navigation {
+	li {
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 8px 15px;
+			transition: all 0.2s;
+			color:rgba(255,255,255,0.5);
+			&:hover{
+				color:rgba(255,255,255,1);
+			}
+		}
+		&.current-menu-item{
+			a {
+				color:rgba(255,255,255,1);
+				&:hover{
+					color:rgba(255,255,255,0.5);
+				}
+			}
+		}
+	}
+}
+.home{
+	.main-navigation {
+		li {
+			a {
+				color:rgba(255,255,255,1);
+				&:hover{
+					color:rgba(255,255,255,0.5);
+				}
+			}
+			&.current-menu-item{
+				a {
+					color:rgba(255,255,255,1);
+					&:hover{
+						color:rgba(255,255,255,0.5);
+					}
+				}
+			}
+		}
+	}
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 1.5em;
+	left: -999em;
+	z-index: 99999;
+}
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+.main-navigation ul ul a {
+	width: 200px;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+	left: auto;
+}
+.main-navigation ul ul li:hover > ul {
+	left: 100%;
+}
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
+}
+/* Small menu */
+.menu-toggle {
+	display: none;
+}
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
