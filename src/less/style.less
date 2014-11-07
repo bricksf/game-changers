@@ -33,6 +33,12 @@ h2{
 	}
 }
 
+ul{
+	li{
+		font-family: "Georgia", serif;
+	}
+}
+
 a{
 	color:@red;
 	text-decoration:none;
@@ -58,6 +64,18 @@ p.large{
 }
 .colorred{
 	color:@red;
+}
+.colorgrey,
+.colorgray{
+	color: @midgray;
+}
+.colorblack{
+	color: @black;
+}
+ul.clean{
+	list-style: none;
+	margin:0;
+	padding:0;
 }
 .font-cap{
 	text-transform: capitalize;
@@ -339,8 +357,8 @@ p.large{
 }
 
 .blockquote{
-	border-top:1px solid @lightgray;
-	border-bottom:1px solid @lightgray;
+	border-top:1px solid @gray;
+	border-bottom:1px solid @gray;
 	color: @red;
 	font-size: 24px;
 	padding:20px 20% 20px 0;
@@ -361,6 +379,7 @@ p.large{
 	list-style: none;
 	margin:0;
 	padding:0;
+   	font-family: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	li{
 		display: inline-block;
 		text-transform: uppercase;
@@ -509,6 +528,7 @@ p.large{
 	&:hover{
 		background-color:rgba(255,255,255,0.3);
 		color:@white;
+		text-decoration: none;
 	}
 }
 
@@ -527,6 +547,7 @@ p.large{
 }
 
 @media only screen and (max-width : 768px) {
+
 }
 @media only screen and (min-width : 768px) {
 }

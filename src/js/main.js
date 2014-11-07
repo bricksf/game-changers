@@ -59,13 +59,18 @@ $(document).ready(UTIL.loadEvents);
             }
         });
     });
-    $('.divider').each(function(){
-        var highestBox = 0;
-        $(this).find('.block-3').each(function(){
-            if($(this).height() > highestBox) 
-               highestBox = $(this).height(); 
+    function pageloaded(){
+        $('.divider').each(function(){
+            var highestBox = 0;
+            $(this).find('.block-3').each(function(){
+                if($(this).height() > highestBox) 
+                   highestBox = $(this).height(); 
+            });
+            $(this).find('.block-3').height(highestBox);
         });
-        $(this).find('.block-3').height(highestBox);
+    }
+    $(window).load(function(){
+        pageloaded();
     });
 
     $('.subnav a').click(function(){
