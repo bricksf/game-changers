@@ -7,6 +7,7 @@
 @import "wordpress.less";
 @import "slick.less";
 @import "grid.less"; 
+@import "font-awesome.css";
 
 
 h1,h2,h3,h4,h5,h6,p{font-weight: 200;}
@@ -42,6 +43,7 @@ ul{
 a{
 	color:@red;
 	text-decoration:none;
+	word-wrap: break-word;
 	&:hover{
 		text-decoration:underline;
 	}
@@ -92,6 +94,7 @@ ul.clean{
 	max-width: 1000px;
 	margin:0 auto;
 	position: relative;
+	box-sizing: border-box;
 	&.pad{
 		padding:20px;
 	}
@@ -151,8 +154,9 @@ ul.clean{
 	}
 }
 #modal {
-	width: 500px;
+	width: auto;
 	padding:20px;
+	box-sizing: border-box;
 	border-radius: 5px;
 	background: #FFF;
 }
@@ -171,6 +175,7 @@ ul.clean{
 }
 .pad{
 	padding:60px auto;
+	box-sizing: border-box;
 }
 .content {
 	overflow:hidden;
@@ -378,9 +383,9 @@ ul.clean{
 	text-align:center;
 	list-style: none;
 	margin:0;
-	padding:0;
-   	font-family: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	padding:0; 
 	li{
+		font-family: "futura-pt", Helvetica, Arial, "Lucida Grande", sans-serif;
 		display: inline-block;
 		text-transform: uppercase;
 		font-size: 13px;
@@ -547,7 +552,125 @@ ul.clean{
 }
 
 @media only screen and (max-width : 768px) {
+	h1{font-size: 1.5em;}
+	h2{font-size: 18px;}
+	h3{font-size: 16px;}
+	h4{font-size: 14px;}
+	h5{font-size: 13px;}
+	h6{font-size: 11px;}
+	p{
+		font-size:13px;
+	}
+	.main-navigation{
+		text-align: center;
+		li {
+			font-size:0.7em;
+			padding:2px 0;
+			float:none;
+			display:inline-block;
+			&:nth-child(5){
+				width: 100%;
+			}
+			&:nth-child(6){
+				width: 100%;
+			}
+		}
+	}
+	.site-header{
+		.site-branding{
+			.brand-wrapper{
+				text-align:center;
+				h1.site-title{
+					float:none;
+					margin:0;
+					padding:0;
+					width:auto;
+					a{
+						width:auto;
+						background-position: center center;
+					}
+					
+				}
+				.site-description{
+					float:none;
+				}
+			}
+		}
+		#site-navigation{
+			button{
+				background:@red;
+			}
+		}
+	}
+	.content-area{
+		position:relative;
+		overflow-x: hidden;
 
+	}
+	.text-block{
+		width:auto;
+		height:auto;
+		margin:0px;
+		padding:10px;
+		float:none;
+		font-size:13px;
+		h4{
+			margin-top:0;
+			margin-bottom:0.5em;
+		}
+		p{
+			display:none;
+			font-size:13px;
+		}
+		&.right{
+			float:right;
+		}
+		a.link{
+			color:white;
+		}
+	}
+	.slick-slide{
+		height:300px !important; 
+		.content-area{
+			position:relative;
+			height:300px;
+			.text-block{
+				position:absolute;
+				bottom:0;
+				left:0;
+				right:0;
+			}
+		}
+	}
+	.flip-container, .front, .back {
+		width: 290px;
+		height: 290px;
+		margin-bottom:20px;
+	}
+	.homepage-blog{
+		text-align: left;
+		padding:20px 0;
+		.blog-item{
+			overflow: hidden;
+			padding:20px;
+			.blog-image{
+				float:left;
+				width:100%;
+				height:200px;
+				background-color: @darkgray;
+				background: no-repeat center center;
+				background-size: cover;
+				img{
+					width:100%;
+					height:100%;
+				}
+			}
+			.body{
+				padding:20px 0 0 0;
+				width:100%;
+			}
+		}
+	}
 }
 @media only screen and (min-width : 768px) {
 }

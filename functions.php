@@ -25,8 +25,9 @@ remove_filter ('the_content', 'wpautop');
 /**
  * ACF Include on production
  */
+$name = $_SERVER['SERVER_NAME'];
 $host = $_SERVER['HTTP_HOST'];
-if($host == "gamechangers.brick.agency" or $host == "gamechangers.davidson.com" /* or $host == "gamechangers.wordpress.local" */ ) {
+if($host == "gamechangers.brick.agency" or $host == "gamechangers.davidson.com" or $name == "gamechangers.brick.agency" or $name == "gamechangers.davidson.com" /* or $host == "gamechangers.wordpress.local" */ ) {
 	define( 'ACF_LITE' , true );
 	include_once locate_template('/inc/advanced-custom-fields/acf.php' );
 	include_once locate_template('/inc/acf-repeater/acf-repeater.php' );

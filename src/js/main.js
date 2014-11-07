@@ -80,6 +80,10 @@ $(document).ready(UTIL.loadEvents);
         return false;
     });
 
+    $('.menu-toggle').on('click', function(){
+        $('#menu-menu-1').toggleClass('show');
+    });
+
 
 })(jQuery);
 

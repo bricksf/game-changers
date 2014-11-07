@@ -274,7 +274,7 @@ function full_width_shortcode( $atts, $content = null ){
 	if($watermark){
 		$markClass = 'watermark';
 	}
-	$output = '</div></article></main></div><div class="'.$centerClass.' '.$colorClass.' '.$padClass.' '.$markClass.'" style="'.$padStyle.'"><div class="content-area pad">'."\r\n";
+	$output = '</div></article></main></div><div class="'.$centerClass.' '.$colorClass.' '.$padClass.' '.$markClass.'" style="'.$padStyle.'"><div class="content-area">'."\r\n";
 	$output .= do_shortcode($content);
 	$output .= '</div></div><div class="content-area"><main class="site-main squeeze" role="main"><article><div class="entry-content">'."\r\n";
 
