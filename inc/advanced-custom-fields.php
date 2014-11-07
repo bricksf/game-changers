@@ -235,7 +235,117 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+	register_field_group(array (
+		'id' => 'acf_sidebar-details',
+		'title' => 'Sidebar Details',
+		'fields' => array (
+			array (
+				'key' => 'field_545beab7a70ee',
+				'label' => 'Sidebar',
+				'name' => 'sidebar',
+				'type' => 'textarea',
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => 12,
+				'formatting' => 'html',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-sidebarpage.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_subnav',
+		'title' => 'Subnav',
+		'fields' => array (
+			array (
+				'key' => 'field_545beb60c65d6',
+				'label' => 'Sub Navigation',
+				'name' => 'subnav',
+				'type' => 'repeater',
+				'instructions' => 'Insert title and slug for each line. Add div ID with id=slug in your body to corresponding link. ',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_545bedaef1eff',
+						'label' => 'Subnav Title',
+						'name' => 'subnav_title',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_545bee5abf9ab',
+						'label' => 'Subnav Slug',
+						'name' => 'subnav_slug',
+						'type' => 'text',
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'table',
+				'button_label' => 'Add Row',
+			),
+			array (
+				'key' => 'field_545bf77b38a7b',
+				'label' => 'Align Left',
+				'name' => 'align_left',
+				'type' => 'checkbox',
+				'choices' => array (
+					'left' => 'Left',
+				),
+				'default_value' => '',
+				'layout' => 'vertical',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
 }
+
 
 
 ?>

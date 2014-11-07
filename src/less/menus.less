@@ -49,9 +49,10 @@
 			color:@red !important;
 			transition: all 0.2s;
 			border:1px solid @white;
+			font-weight:500;
 			&:hover{
 				background-color:rgba(255,255,255,0.3);
-				color:@white;
+				color:@white !important;
 			}
 		}
 	}
@@ -69,6 +70,8 @@
 				color:rgba(255,255,255,1);
 			}
 		}
+		&.current_page_parent,
+		&.current-page-ancestor,
 		&.current-menu-item{
 			a {
 				color:rgba(255,255,255,1);
@@ -95,6 +98,31 @@
 						color:rgba(255,255,255,0.5);
 					}
 				}
+			}
+		}
+	}
+}
+.subnav{
+	list-style: none;
+	margin: 0;
+	padding: 4px 0;
+	width:100%;
+	text-align: center;
+	&.left{
+		text-align: left;
+	}
+	li {
+		display:inline-block;
+		font-size: 13px;
+		a {
+			display: block;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 8px 15px;
+			transition: all 0.2s;
+			color:@midgray;
+			&:hover{
+				color:@red;
 			}
 		}
 	}

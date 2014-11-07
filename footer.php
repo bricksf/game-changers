@@ -37,5 +37,30 @@
 
 <!--gulpScriptsStart edited by gulpfile.js--><script src="<?php echo get_stylesheet_directory_uri(); ?>/build/js/main.min.js"></script><!--gulpScriptsEnd-->
 
+
+<div class="easy-modal" id="modal">
+	<div class="header">
+		<h3>Recommend a Game Changer</h3>
+	</div>
+	<form action="">
+		<div class="txt">
+			<label for="username">First Name</label>
+			<input type="text" name="" id="username">
+		</div>
+		<div class="txt">
+			<label for="email">Last Name</label>
+			<input type="text" name="" id="email">
+		</div>
+		<div class="txt">
+			<label for="about">About</label>
+			<textarea name="" id="about"></textarea>
+		</div>
+		<br />
+		<div class="btn clearfix">
+			<a class="close button red" href="#">Sign Up</a>
+			<a class="close cancel button red" href="#">Cancel</a>
+		</div>
+	</form>
+</div>
 </body>
 </html>

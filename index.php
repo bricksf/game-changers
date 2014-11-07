@@ -14,7 +14,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area pad">
-		<main id="main" class="site-main blog" role="main">
+		<main id="main" class="site-main sidebar-layout" role="main">
 
 		<?php if ( have_posts() ) : ?>
 

@@ -14,7 +14,7 @@ var server = lr();
 gulp.task('scripts', function() {
     gulp.src([
     		'src/js/plugins/jquery.min.js',
-            'src/js/plugins/jquery.jcarousel.js',
+            'src/js/plugins/jquery.easyModal.js',
             'src/js/plugins/slick.js',
     		'src/js/main.js'
     	])
@@ -82,6 +82,7 @@ gulp.task('embedDev', function() {
 <!--gulpHeadStart edited by gulpfile.js-->\
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/src/css/style.css">\
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/src/js/plugins/jquery.min.js"></script>\
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/src/js/plugins/jquery.easyModal.js"></script>\
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/src/js/plugins/slick.js"></script>\
 <!--gulpHeadEnd-->'))
         .pipe(replace(/(<!--gulpMetaStart([^]*)gulpMetaStart-->)/ig,'\

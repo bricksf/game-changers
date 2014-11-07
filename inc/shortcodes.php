@@ -276,7 +276,7 @@ function full_width_shortcode( $atts, $content = null ){
 	}
 	$output = '</div></article></main></div><div class="'.$centerClass.' '.$colorClass.' '.$padClass.' '.$markClass.'" style="'.$padStyle.'"><div class="content-area pad">'."\r\n";
 	$output .= do_shortcode($content);
-	$output .= '</div></div><div class="content-area"><main class="site-main" role="main"><article><div class="entry-content">'."\r\n";
+	$output .= '</div></div><div class="content-area"><main class="site-main squeeze" role="main"><article><div class="entry-content">'."\r\n";
 
 
 	return $output;
@@ -323,5 +323,24 @@ function block_shortcode( $atts, $content = null ){
 }
 
 add_shortcode( 'block', 'block_shortcode' );
+
+function button_shortcode( $atts, $content = null ){
+	extract( shortcode_atts( array(
+		'text' => 'submit',
+		'link' => '#',
+		'style' => 'small',
+		'color' => 'red'
+	), $atts ) );
+	$centerClass = '';
+	$colorClass = '';
+
+
+	$output = '<a href="'.$link.'" class="button '.$style.' '.$color.'">'.$text.'</a>';
+
+	return $output;
+
+}
+
+add_shortcode( 'button', 'button_shortcode' );
 
 ?>
