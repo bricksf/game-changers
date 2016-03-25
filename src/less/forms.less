@@ -10,15 +10,16 @@ textarea {
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 }
 select{
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+	//-webkit-appearance: none;
+    //-moz-appearance: none;
+    //appearance: none;
 	color: #666;
 	border: none;
 	border-radius: 0px;
-	background-color: @lightgray;
-	font-size:20px;
-	line-height:28px;
+	border:1px solid @midgray;
+	//background-color: @lightgray;
+	font-size:14px;
+	line-height:18px;
 	width: 100%;
 	height:40px;
 	option{
@@ -30,9 +31,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: none;
-	background: @orange;
+	background: @red;
 	color: @white;
-	width:100%;
+	width:auto;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 16px;
@@ -43,7 +44,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background: lighten(@orange, 10%);
+	background: lighten(@red, 10%);
 }
 button:focus,
 input[type="button"]:focus,
@@ -83,9 +84,10 @@ textarea {
 	color: #666;
 	border: none;
 	border-radius: 0px;
-	background-color: @lightgray;
-	font-size:20px;
-	line-height:28px;
+	border:1px solid @midgray;
+	background-color: @white;
+	font-size:14px;
+	line-height:18px;
 	width: 100%;
 
 }

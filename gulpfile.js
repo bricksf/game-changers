@@ -54,22 +54,22 @@ gulp.task('images', function(){
 gulp.task('embedProd', function() {
 
     gulp.src(['header.php'])
-        .pipe(replace(/(<!--gulpHeadStart([^]*)gulpHeadEnd-->)/ig,'\
-<!--gulpHeadStart edited by gulpfile.js-->\
+        .pipe(replace(/(<!--GameChangersHeadStart([^]*)GameChangersHeadEnd-->)/ig,'\
+<!--GameChangersHeadStart-->\
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/build/css/style.min.css">\
-<!--gulpHeadEnd-->'))
-        .pipe(replace(/(<!--gulpMetaStart([^]*)gulpMetaStart-->)/ig,'\
-<!--gulpMetaStart edited by gulpfile.js-->\
+<!--GameChangersHeadEnd-->'))
+        .pipe(replace(/(<!--GameChangersMetaStart([^]*)GameChangersMetaEnd-->)/ig,'\
+<!--GameChangersMetaStart-->\
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">\
-<!--gulpMetaStart-->'))
+<!--GameChangersMetaEnd-->'))
         .pipe(gulp.dest('.'))
         .pipe(refresh(server));
 
     gulp.src(['footer.php'])
-        .pipe(replace(/(<!--gulpScriptsStart([^]*)gulpScriptsEnd-->)/ig,'\
-<!--gulpScriptsStart edited by gulpfile.js-->\
+        .pipe(replace(/(<!--GameChangersScriptsStart([^]*)GameChangersScriptsEnd-->)/ig,'\
+<!--GameChangersScriptsStart-->\
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/build/js/main.min.js"></script>\
-<!--gulpScriptsEnd-->'))
+<!--GameChangersScriptsEnd-->'))
         .pipe(gulp.dest('.'))
         .pipe(refresh(server));
 
@@ -78,25 +78,25 @@ gulp.task('embedProd', function() {
 gulp.task('embedDev', function() {
     
     gulp.src(['header.php'])
-        .pipe(replace(/(<!--gulpHeadStart([^]*)gulpHeadEnd-->)/ig,'\
-<!--gulpHeadStart edited by gulpfile.js-->\
+        .pipe(replace(/(<!--devHeadStart([^]*)devHeadEnd-->)/ig,'\
+<!--devHeadStart-->\
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/src/css/style.css">\
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/src/js/plugins/jquery.min.js"></script>\
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/src/js/plugins/jquery.easyModal.js"></script>\
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/src/js/plugins/slick.js"></script>\
-<!--gulpHeadEnd-->'))
-        .pipe(replace(/(<!--gulpMetaStart([^]*)gulpMetaStart-->)/ig,'\
-<!--gulpMetaStart-->\
+<!--devHeadEnd-->'))
+        .pipe(replace(/(<!--devMetaStart([^]*)devMetaEnd-->)/ig,'\
+<!--devMetaStart-->\
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">\
-<!--gulpMetaStart-->'))
+<!--devMetaEnd-->'))
         .pipe(gulp.dest('.'))
         .pipe(refresh(server));
 
     gulp.src(['footer.php'])
-        .pipe(replace(/(<!--gulpScriptsStart([^]*)gulpScriptsEnd-->)/ig,'\
-<!--gulpScriptsStart edited by gulpfile.js-->\
+        .pipe(replace(/(<!--devScriptsStart([^]*)devScriptsEnd-->)/ig,'\
+<!--devScriptsStart edited by gulpfile.js-->\
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/src/js/main.js"></script>\
-<!--gulpScriptsEnd-->'))
+<!--devScriptsEnd-->'))
         .pipe(gulp.dest('.'))
         .pipe(refresh(server));
 });

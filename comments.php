@@ -64,6 +64,8 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'game-changers' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php 
+	$arg = array('comment_notes_after' => '');
+	comment_form($arg); ?>
 
 </div><!-- #comments -->

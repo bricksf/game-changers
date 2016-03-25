@@ -19,7 +19,7 @@ if( have_rows('subnav') ):
     while ( have_rows('subnav') ) : the_row();
 
         // display a sub field value
-        echo '<li><a href="#'.get_sub_field('subnav_slug').'">'.get_sub_field('subnav_title').'</a></li>';
+        echo '<li><a href="#'.get_sub_field('subnav_slug').'" class="autoscroll">'.get_sub_field('subnav_title').'</a></li>';
 
     endwhile;
     echo '</ul></div>';
@@ -57,5 +57,7 @@ endif;
         ?>
         </div>
     </div><!-- #primary -->
+    <div class="center" style="clear:both;"><a href="#page" class="button red autoscroll">BACK TO TOP</a></div>
+    <br /><br /><br />
 
 <?php get_footer(); ?>

@@ -85,9 +85,20 @@
 .block-wrap {
 	padding:40px;
 }
-
-
-
+@media only screen and (max-width : 568px) {
+	.grid .block-2 {
+		width:100%;
+	}
+	.grid .block-4 {
+		width:100%;
+	}
+	.grid .block-6 {
+		width:100%;
+	}
+	.grid .block-3 {
+		width:100%;
+	}	
+}
 @media only screen and (max-width : 768px) {
 	.grid-bind .block,
 	.grid .block {
@@ -134,6 +145,7 @@
 		text-align: center;
 	}
 }
+
 @media only screen and (min-width : 768px) {
 	.grid .block {
 		width:50%;

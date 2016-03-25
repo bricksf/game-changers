@@ -25,11 +25,4 @@
             // no rows found
         endif;
     
-	?>
-	<hr />
-	<div class="center">
-		<h2>Recommend a Game Changer</h2>
-			<p>Do you know a member of the Davidson community — alumnus or alumna, faculty or staff member, current student — who has championed positive change — in family, community or world? If so, we invite you to nominate a game changer. Davidson will follow up to tell the story.</p>
-￼￼￼￼￼￼￼</div>
-	</div><!-- .entry-content -->
-</article><!-- #post-## -->
+	?><hr /><div class="center"><h2>Recommend a Game Changer</h2><p>Do you know a member of the Davidson community — alumnus or alumna, faculty or staff member, current student — who has championed positive change — in family, community or world? If so, we invite you to nominate a game changer. Davidson will follow up to tell the story.</p><p><a class="button red" style="font-size:16px;" title="Recommend a Game Changer" href="#modal">Recommendation Form</a></p></div></div><!-- .entry-content --></article><!-- #post-## -->

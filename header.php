@@ -11,11 +11,12 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=10, IE=EDGE, chrome=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<!--gulpHeadStart edited by gulpfile.js--><link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/build/css/style.min.css"><!--gulpHeadEnd-->
+<!--GameChangersHeadStart--><link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/build/css/style.min.css?123"><!--GameChangersHeadEnd-->
 
 <?php wp_head(); ?>
 </head>
@@ -27,8 +28,9 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<div class="brand-wrapper">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<div class="site-title"><h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1></div>
+				<p class="sub-title"><?php bloginfo( 'description' ); ?></p>
+				<a href="http://www.davidson.edu/" target="_blank"><h2 class="site-description"></h2></a>
 			</div>
 		</div>
 

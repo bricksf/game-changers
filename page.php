@@ -22,7 +22,7 @@ if( have_rows('subnav') ):
     while ( have_rows('subnav') ) : the_row();
 
         // display a sub field value
-        echo '<li><a href="#'.get_sub_field('subnav_slug').'">'.get_sub_field('subnav_title').'</a></li>';
+        echo '<li><a href="#'.get_sub_field('subnav_slug').'" class="autoscroll">'.get_sub_field('subnav_title').'</a></li>';
 
     endwhile;
     echo '</ul></div>';

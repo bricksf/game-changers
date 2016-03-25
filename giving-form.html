@@ -1,0 +1,1430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:calendar="urn:calendarlib">
+<!-- From contentarea100.html:  Start-End -->
+<!-- For all pages -->
+<!-- Related updates: 100, 101, 115 -->
+
+
+<!-- <H3>org code from bean: DDC</H3> -->
+<!-- File: onlinegiving.jsp 	-->
+<!-- NTV:	1.0 					-->
+<head>
+	<title>Davidson College - Online Gift Form</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	
+	<meta name="keywords" content="Davidson College, Alumni">
+	
+	<script language="javascript">
+		function resetCookie()
+			{var date=new Date();
+			date.setTime(date.getTime() - (24*60*60*1000));
+			document.cookie="IGXPoll=; path=/; expires="+ date.toGMTString();
+			var url=window.location.href;
+			window.location.replace(url);}
+	 </script>
+<script>
+function submitPressed() {
+document.olc_onlinegiving.submitButton.disabled=true;
+document.olc_onlinegiving.submit();
+}
+</script>
+<style>
+  body{
+    margin:0;
+    padding:0;
+    background-color:#999;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+   background-image:url(http://gamechangers.davidson.edu/wp-content/themes/game-changers/build/img/watermark-padded.png); 
+   background-position: center center;
+   background-repeat: repeat-x;
+  }
+  #content{
+    width:960px;
+    margin:0 auto;
+    background:white;
+    background-color:#ab192e;
+  }
+  .form-header{
+    padding:60px 20px 20px 20px;
+    color:white;
+  }
+  .form-header h2{
+    font-weight: 200;
+    margin:0;
+  }
+  .form-header p{
+    margin:0;
+  }
+  .logo{
+    margin-top:0px;
+    float:right;
+  }
+  #olc-Content{
+    background-color:white; 
+    padding:20px;
+  }
+  .required{
+    color:#ab192e;;
+  }
+</style>
+
+
+</head>
+
+<body class="olc" onload="if (typeof initGuestIter == 'function') initGuestIter(1);if (typeof initGuestRows == 'function') initGuestRows(2);if (typeof rebuildGuestSection == 'function') addGuestInputArea(0);;if (typeof calcTotal == 'function') calcTotal(); else if (typeof orderD == 'function') orderD();">
+<div id="content">
+<div class="form-header">
+<div class="logo"><img src="http://gamechangers.davidson.edu/wp-content/themes/game-changers/build/img/logo.png"></div>
+<h2>Gift Form</h2>
+<p>Fiscal Year end June 30</p>
+</div>
+
+<!-- ========================================== OLC Middle: Start  -->
+				
+<!-- From contentarea120.html:  START -->
+<!-- Top Controlling Table -->
+				<a name="maincontent" id="maincontent"></a>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" id="olc-Content" height="250">
+				<tr>
+<!-- From contentarea120.html:  END -->
+
+				<td valign="top">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td><span class="formerror"></span></td>
+</tr>
+</table>
+
+
+
+<div id="formBuilder-Content">
+
+<form method="post" name="olc_onlinegiving" action="/olc/pub/DDC/onlinegiving/processGivingForm.jsp">
+<input type="hidden" name="orgCode" value="DDC">
+<input type="hidden" name="form_id" value="154672">
+<input type="hidden" name="hpcId" value="0">
+<input type="hidden" name="uriOrgCode" value="DDC">
+<input type="hidden" name="selectHold" value="0">
+<input type="hidden" name="order_mod" value="">
+
+<input type="hidden" name="referrer_type" value="UR">
+<input type="hidden" name="referrer_id" value="">
+<input type="hidden" name="page_tag" value="">
+<input type="hidden" name="__DDC_appeal_code" value="15XXANWX">
+
+
+<!-- ================== DYNAMIC FORM BEGINS HERE ========== -->
+
+<SCRIPT LANGUAGE="JavaScript">
+// Display-Hide CompanyMatch Information
+function CompanyMatch(strForm)
+{
+   // See if the 'companymatch’ checkbox has been checked
+   if (eval("document." + strForm + ".matching_gift_indicator.checked") 
+== true)
+   { 
+      // Display Match Inputs by making the entire table visible
+      document.getElementById("match_gifts").style.display = '';
+   }
+   else // Match was Unchecked
+{
+// Hide 'Match' Section inputs
+document.getElementById("match_gifts").style.display = 'none';
+	}
+}
+
+// Display-Hide Honor Information
+function HonorGift(strForm)
+{
+   // See if the 'honor’ checkbox has been checked
+   if (eval("document." + strForm + ".DDC_honor_of_checkbox.checked") 
+== true)
+   { 
+      // Display Honor Inputs by making the entire table visible
+      document.getElementById("honor_gifts").style.display = '';
+   }
+   else // Honor was Unchecked
+{
+// Hide 'Honor' Section inputs
+document.getElementById("honor_gifts").style.display = 'none';
+	}
+}
+
+// Display-Hide MemoryGift Information
+function MemoryGift(strForm)
+{
+   // See if the 'memory’ checkbox has been checked
+   if (eval("document." + strForm + ".DDC_in_memory_of_checkbox.checked") 
+== true)
+   { 
+      // Display Memory Inputs by making the entire table visible
+      document.getElementById("memory_gifts").style.display = '';
+   }
+   else // Memory was Unchecked
+{
+// Hide 'Memory' Section inputs
+document.getElementById("memory_gifts").style.display = 'none';
+	}
+}
+
+// Display-Hide RecurGift Information
+function RecurGift(strForm)
+{
+   // See if the 'recur’ checkbox has been checked
+   if (eval("document." + strForm + ".DDC_recurring_monthly.checked") 
+== true)
+   { 
+      // Display Recur Inputs by making the entire table visible
+      document.getElementById("recur_gifts").style.display = '';
+   }
+   else // Recur was Unchecked
+{
+// Hide 'Recur' Section inputs
+document.getElementById("recur_gifts").style.display = 'none';
+	}
+}
+
+function reverseCopy() { 
+if ( (document.getElementById('DDC_reverse_address_copy') != null) && (document.olc_onlinegiving.DDC_reverse_address_copy.checked) ) { 
+	
+      if ( (document.getElementById('billing_address1') != null) && (document.getElementById('home_address1') != null) ) 
+        document.olc_onlinegiving.billing_address1.value = document.olc_onlinegiving.home_address1.value; 
+		
+      if ( (document.getElementById('billing_address2') != null) && (document.getElementById('home_address2') != null) ) 
+        document.olc_onlinegiving.billing_address2.value = document.olc_onlinegiving.home_address2.value; 
+		
+      if ( (document.getElementById('billing_address3') != null) && (document.getElementById('home_address3') != null) ) 
+        document.olc_onlinegiving.billing_address3.value = document.olc_onlinegiving.home_address3.value; 
+		
+      if ( (document.getElementById('billing_city') != null) && (document.getElementById('home_city') != null) ) 
+        document.olc_onlinegiving.billing_city.value = document.olc_onlinegiving.home_city.value; 
+		
+      if ( (document.getElementById('billing_state') != null) && (document.getElementById('home_state') != null) ) 
+        document.olc_onlinegiving.billing_state.value = document.olc_onlinegiving.home_state.value; 
+		
+      if ( (document.getElementById('billing_zip') != null) && (document.getElementById('home_zip') != null) ) 
+        document.olc_onlinegiving.billing_zip.value = document.olc_onlinegiving.home_zip.value; 
+		
+      if ( (document.getElementById('billing_country') != null) && (document.getElementById('home_country') != null) ) 
+        document.olc_onlinegiving.billing_country.value = document.olc_onlinegiving.home_country.value; 
+    } 
+  } 
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function calcTotal() { 
+  var amt0; 
+  var element_amt0 = document.getElementById("DDC_davidson_trust"); 
+  if ((element_amt0 == null) || (document.olc_onlinegiving.DDC_davidson_trust.value == "") || (document.olc_onlinegiving.DDC_davidson_trust.value == "Quantity")) 
+    amt0 = 0; 
+  else { 
+    amt0 = document.olc_onlinegiving.DDC_davidson_trust.value; 
+    if (amt0.indexOf(',') > -1 ) { 
+      amt0 = amt0.replace(/,/g, ''); 
+      document.olc_onlinegiving.DDC_davidson_trust.value = amt0; 
+    } 
+    amt0 = 1 * (parseFloat(document.olc_onlinegiving.DDC_davidson_trust.value)); 
+    if (isNaN(amt0)) { amt0 = 0; } 
+  } 
+  var amt1; 
+  var element_amt1 = document.getElementById("DDC_davidson_athletic_foundation"); 
+  if ((element_amt1 == null) || (document.olc_onlinegiving.DDC_davidson_athletic_foundation.value == "") || (document.olc_onlinegiving.DDC_davidson_athletic_foundation.value == "Quantity")) 
+    amt1 = 0; 
+  else { 
+    amt1 = document.olc_onlinegiving.DDC_davidson_athletic_foundation.value; 
+    if (amt1.indexOf(',') > -1 ) { 
+      amt1 = amt1.replace(/,/g, ''); 
+      document.olc_onlinegiving.DDC_davidson_athletic_foundation.value = amt1; 
+    } 
+    amt1 = 1 * (parseFloat(document.olc_onlinegiving.DDC_davidson_athletic_foundation.value)); 
+    if (isNaN(amt1)) { amt1 = 0; } 
+  } 
+  var amt2; 
+  var element_amt2 = document.getElementById("DDC_wdav_public_radio"); 
+  if ((element_amt2 == null) || (document.olc_onlinegiving.DDC_wdav_public_radio.value == "") || (document.olc_onlinegiving.DDC_wdav_public_radio.value == "Quantity")) 
+    amt2 = 0; 
+  else { 
+    amt2 = document.olc_onlinegiving.DDC_wdav_public_radio.value; 
+    if (amt2.indexOf(',') > -1 ) { 
+      amt2 = amt2.replace(/,/g, ''); 
+      document.olc_onlinegiving.DDC_wdav_public_radio.value = amt2; 
+    } 
+    amt2 = 1 * (parseFloat(document.olc_onlinegiving.DDC_wdav_public_radio.value)); 
+    if (isNaN(amt2)) { amt2 = 0; } 
+  } 
+  var amt3; 
+  var element_amt3 = document.getElementById("DDC_FOTA"); 
+  if ((element_amt3 == null) || (document.olc_onlinegiving.DDC_FOTA.value == "") || (document.olc_onlinegiving.DDC_FOTA.value == "Quantity")) 
+    amt3 = 0; 
+  else { 
+    amt3 = document.olc_onlinegiving.DDC_FOTA.value; 
+    if (amt3.indexOf(',') > -1 ) { 
+      amt3 = amt3.replace(/,/g, ''); 
+      document.olc_onlinegiving.DDC_FOTA.value = amt3; 
+    } 
+    amt3 = 1 * (parseFloat(document.olc_onlinegiving.DDC_FOTA.value)); 
+    if (isNaN(amt3)) { amt3 = 0; } 
+  } 
+  var amt4; 
+  var element_amt4 = document.getElementById("DDC_designation_amount"); 
+  if ((element_amt4 == null) || (document.olc_onlinegiving.DDC_designation_amount.value == "") || (document.olc_onlinegiving.DDC_designation_amount.value == "Quantity")) 
+    amt4 = 0; 
+  else { 
+    amt4 = document.olc_onlinegiving.DDC_designation_amount.value; 
+    if (amt4.indexOf(',') > -1 ) { 
+      amt4 = amt4.replace(/,/g, ''); 
+      document.olc_onlinegiving.DDC_designation_amount.value = amt4; 
+    } 
+    amt4 = 1 * (parseFloat(document.olc_onlinegiving.DDC_designation_amount.value)); 
+    if (isNaN(amt4)) { amt4 = 0; } 
+  } 
+  var amt5; 
+  var element_amt5 = document.getElementById("DDC_unrestricted"); 
+  if ((element_amt5 == null) || (document.olc_onlinegiving.DDC_unrestricted.value == "") || (document.olc_onlinegiving.DDC_unrestricted.value == "Quantity")) 
+    amt5 = 0; 
+  else { 
+    amt5 = document.olc_onlinegiving.DDC_unrestricted.value; 
+    if (amt5.indexOf(',') > -1 ) { 
+      amt5 = amt5.replace(/,/g, ''); 
+      document.olc_onlinegiving.DDC_unrestricted.value = amt5; 
+    } 
+    amt5 = 1 * (parseFloat(document.olc_onlinegiving.DDC_unrestricted.value)); 
+    if (isNaN(amt5)) { amt5 = 0; } 
+  } 
+  var amt6; 
+  var element_amt6 = document.getElementById("DDC_research_initiatives"); 
+  if ((element_amt6 == null) || (document.olc_onlinegiving.DDC_research_initiatives.value == "") || (document.olc_onlinegiving.DDC_research_initiatives.value == "Quantity")) 
+    amt6 = 0; 
+  else { 
+    amt6 = document.olc_onlinegiving.DDC_research_initiatives.value; 
+    if (amt6.indexOf(',') > -1 ) { 
+      amt6 = amt6.replace(/,/g, ''); 
+      document.olc_onlinegiving.DDC_research_initiatives.value = amt6; 
+    } 
+    amt6 = 1 * (parseFloat(document.olc_onlinegiving.DDC_research_initiatives.value)); 
+    if (isNaN(amt6)) { amt6 = 0; } 
+  } 
+  var amt7; 
+  var element_amt7 = document.getElementById("DDC_internships_fellowships"); 
+  if ((element_amt7 == null) || (document.olc_onlinegiving.DDC_internships_fellowships.value == "") || (document.olc_onlinegiving.DDC_internships_fellowships.value == "Quantity")) 
+    amt7 = 0; 
+  else { 
+    amt7 = document.olc_onlinegiving.DDC_internships_fellowships.value; 
+    if (amt7.indexOf(',') > -1 ) { 
+      amt7 = amt7.replace(/,/g, ''); 
+      document.olc_onlinegiving.DDC_internships_fellowships.value = amt7; 
+    } 
+    amt7 = 1 * (parseFloat(document.olc_onlinegiving.DDC_internships_fellowships.value)); 
+    if (isNaN(amt7)) { amt7 = 0; } 
+  } 
+  var total = parseFloat(amt0+amt1+amt2+amt3+amt4+amt5+amt6+amt7); 
+  document.olc_onlinegiving.DDC_totalbillable2.value = total.toFixed(2); 
+} 
+
+//-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  function clearQuantityText(thefield) { 
+    if (thefield.defaultValue==thefield.value) { thefield.value = ""; } 
+  } 
+
+//-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  function copyBillAddrToHome() { 
+    if ( (document.getElementById('home_address_same_as_billing_check') != null) && (document.olc_onlinegiving.home_address_same_as_billing_check.checked) ) { 
+      if ( (document.getElementById('billing_address1') != null) && (document.getElementById('home_address1') != null) ) 
+        document.olc_onlinegiving.home_address1.value = document.olc_onlinegiving.billing_address1.value; 
+      if ( (document.getElementById('billing_address2') != null) && (document.getElementById('home_address2') != null) ) 
+        document.olc_onlinegiving.home_address2.value = document.olc_onlinegiving.billing_address2.value; 
+      if ( (document.getElementById('billing_address3') != null) && (document.getElementById('home_address3') != null) ) 
+        document.olc_onlinegiving.home_address3.value = document.olc_onlinegiving.billing_address3.value; 
+      if ( (document.getElementById('billing_city') != null) && (document.getElementById('home_city') != null) ) 
+        document.olc_onlinegiving.home_city.value = document.olc_onlinegiving.billing_city.value; 
+      if ( (document.getElementById('billing_state') != null) && (document.getElementById('home_state') != null) ) 
+        document.olc_onlinegiving.home_state.value = document.olc_onlinegiving.billing_state.value; 
+      if ( (document.getElementById('billing_zip') != null) && (document.getElementById('home_zip') != null) ) 
+        document.olc_onlinegiving.home_zip.value = document.olc_onlinegiving.billing_zip.value; 
+      if ( (document.getElementById('billing_country') != null) && (document.getElementById('home_country') != null) ) 
+        document.olc_onlinegiving.home_country.value = document.olc_onlinegiving.billing_country.value; 
+    } 
+  } 
+
+//-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  function formLimitTextbox(limitField, limitNum, exceededMsgBlock) { 
+    if (limitField.value.length > limitNum) { 
+      exceededMsgBlock.style.display = "block"; 
+      var newtext = limitField.value; 
+      limitField.value = newtext.substring(0, limitNum); 
+    } 
+    else 
+      exceededMsgBlock.style.display = "none"; 
+  } 
+
+//-->
+</SCRIPT>
+<table border="0" cellspacing="0" cellpadding="0" class="fb-formTable">
+<tr><td>
+<!-- section:start:intro -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" class="formSection" id="intro">
+<!-- component:start:newline:DDC_styles --><tr><td colspan="2"><!-- edittag.html.DDC_styles.start --><style type="text/css">
+#formBuilder-Content td.sectionHeader { background-color: #FFF; color: #000;font-size:18px; font-family:Ariel, helveltica,sans-serif; font-weight: bold;border-top: 2px solid #FFF;
+border-bottom: 1px solid #FFF}
+</style>
+
+<span style="font-size: large;"><span style="font-family: Arial;"><strong>Personal Information</strong></span></span><!-- edittag.html.DDC_styles.end -->
+</td></tr><!-- component:end:DDC_styles -->
+</table>
+<!-- section:end:intro -->
+
+<!-- section:start:DDC20120622135836 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" class="formSection" id="DDC20120622135836">
+<!-- component:start:newline:DDC20120622135836_header --><tr><td colspan="2"><p><!-- edittag.text.DDC20120622135836_header.start -->If you need assistance, would like to make a stock gift, or wish to speak with a staff member, please call 704-894-2680. If you prefer to send a check, please send it to Davidson College, Box 7174, Davidson, NC 28035-7174.<!-- edittag.text.DDC20120622135836_header.end --></p></td></tr><!-- component:end:DDC20120622135836_header -->
+</table>
+<!-- section:end:DDC20120622135836 -->
+
+<!-- section:start:personal -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" class="formSection" id="personal">
+<!-- component:start:newline:DDC_personal_information_header --><tr><td colspan="2"><!-- edittag.html.DDC_personal_information_header.start --><table width="100%">
+<tr><td width="430"> </td><!-- edittag.html.DDC_personal_information_header.end -->
+</td></tr><!-- component:end:DDC_personal_information_header -->
+<!-- component:start:newline:DDC_appealcode_tablestart --><tr><td colspan="2"><!-- edittag.html.DDC_appealcode_tablestart.start -->  <table style="display:none">
+<tr>
+<td colspan="2"><!-- edittag.html.DDC_appealcode_tablestart.end -->
+</td></tr><!-- component:end:DDC_appealcode_tablestart -->
+<!-- component:start:newline:DDC_appeal_code -->
+<tr><td><label for="DDC_appeal_code" class="optional"><!-- edittag.label.DDC_appeal_code.start -->Appeal&nbsp;Code:<!-- edittag.label.DDC_appeal_code.end --></label></td><td style="vertical-align:top"><input type="text" name="DDC_appeal_code" id="DDC_appeal_code" value="15XXANWX" style="width:75px" maxlength="10" readonly></td></tr><!-- component:end:DDC_appeal_code -->
+<!-- component:start:newline:DDC_appealcode_tableend --><tr><td colspan="2"><!-- edittag.html.DDC_appealcode_tableend.start -->  </td>
+</tr>
+</table><!-- edittag.html.DDC_appealcode_tableend.end -->
+</td></tr><!-- component:end:DDC_appealcode_tableend -->
+<!-- component:start:newline:home_firstname -->
+<tr><td><label for="home_firstname" class="required"><!-- edittag.label.home_firstname.start -->First&nbsp;Name:&nbsp;*<!-- edittag.label.home_firstname.end --></label></td><td style="vertical-align:top"><input type="text" name="home_firstname" id="home_firstname" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:home_firstname -->
+<!-- component:start:newline:home_lastname -->
+<tr><td><label for="home_lastname" class="required"><!-- edittag.label.home_lastname.start -->Last&nbsp;Name:&nbsp;*<!-- edittag.label.home_lastname.end --></label></td><td style="vertical-align:top"><input type="text" name="home_lastname" id="home_lastname" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:home_lastname -->
+<!-- component:start:newline:home_maidenname -->
+<tr><td><label for="home_maidenname" class="optional"><!-- edittag.label.home_maidenname.start -->Maiden&nbsp;Name:<!-- edittag.label.home_maidenname.end --></label></td><td style="vertical-align:top"><input type="text" name="home_maidenname" id="home_maidenname" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:home_maidenname -->
+<!-- component:start:newline:DDC_affiliation_dropdown -->
+<tr><td valign="top"><label for="DDC_affiliation_dropdown" class="optional"><!-- edittag.label.DDC_affiliation_dropdown.start -->Affiliation:<!-- edittag.label.DDC_affiliation_dropdown.end --></label></td>
+<td style="vertical-align:top"><SELECT name="DDC_affiliation_dropdown" id="DDC_affiliation_dropdown"  size="1"  >
+<OPTION value="">-- Select -- </OPTION>
+<option value="alum">Alumnus/a</option>
+<option value="parent">Parent</option>
+<option value="student">Student</option>
+<option value="friend">Friend</option>
+<option value="employee">Employee</option>
+
+</select>
+</td></tr><!-- component:end:DDC_affiliation_dropdown -->
+<!-- component:start:newline:DDC_class -->
+<tr><td><label for="DDC_class" class="optional"><!-- edittag.label.DDC_class.start -->Class&nbsp;Year:<!-- edittag.label.DDC_class.end --></label></td><td style="vertical-align:top"><input type="text" name="DDC_class" id="DDC_class" value="" style="width:75px" maxlength="4"  ></td></tr><!-- component:end:DDC_class -->
+<!-- component:start:newline:DDC_spouse_name -->
+<tr><td><label for="DDC_spouse_name" class="optional"><!-- edittag.label.DDC_spouse_name.start -->Spouse/Partner&nbsp;Name:<!-- edittag.label.DDC_spouse_name.end --></label></td><td style="vertical-align:top"><input type="text" name="DDC_spouse_name" id="DDC_spouse_name" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:DDC_spouse_name -->
+<!-- component:start:newline:DDC_spouse_class -->
+<tr><td><label for="DDC_spouse_class" class="optional"><!-- edittag.label.DDC_spouse_class.start -->Spouse/Partner&nbsp;Class&nbsp;Year&nbsp;(if&nbsp;applicable):<!-- edittag.label.DDC_spouse_class.end --></label></td><td style="vertical-align:top"><input type="text" name="DDC_spouse_class" id="DDC_spouse_class" value="" style="width:75px" maxlength="4"  ></td></tr><!-- component:end:DDC_spouse_class -->
+<!-- component:start:newline:home_address1 -->
+<tr><td><label for="home_address1" class="required"><!-- edittag.label.home_address1.start -->Preferred&nbsp;Address:&nbsp;*<!-- edittag.label.home_address1.end --></label></td><td style="vertical-align:top"><input type="text" name="home_address1" id="home_address1" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:home_address1 -->
+<!-- component:start:newline:home_address2 -->
+<tr><td><label for="home_address2" class="optional"><!-- edittag.label.home_address2.start -->Address:<!-- edittag.label.home_address2.end --></label></td><td style="vertical-align:top"><input type="text" name="home_address2" id="home_address2" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:home_address2 -->
+<!-- component:start:newline:home_city -->
+<tr><td><label for="home_city" class="required"><!-- edittag.label.home_city.start -->City:&nbsp;*<!-- edittag.label.home_city.end --></label></td><td style="vertical-align:top"><input type="text" name="home_city" id="home_city" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:home_city -->
+<!-- component:start:newline:home_state -->
+<tr><td valign="top"><label for="home_state" class="optional"><!-- edittag.label.home_state.start -->State:<!-- edittag.label.home_state.end --></label></td>
+<td style="vertical-align:top"><SELECT name="home_state" id="home_state"  size="1" >
+<OPTION value="">-- Select -- </OPTION>
+<option value="AL">Alabama</option>
+<option value="AK">Alaska</option>
+<option value="AB">Alberta</option>
+<option value="AS">American Samoa</option>
+<option value="AZ">Arizona</option>
+<option value="AR">Arkansas</option>
+<option value="BC">British Columbia</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="DE">Delaware</option>
+<option value="DC">District of Columbia</option>
+<option value="FM">Fed St of Micronesia</option>
+<option value="FL">Florida</option>
+<option value="GA">Georgia</option>
+<option value="GU">Guam</option>
+<option value="HI">Hawaii</option>
+<option value="ID">Idaho</option>
+<option value="IL">Illinois</option>
+<option value="IN">Indiana</option>
+<option value="IA">Iowa</option>
+<option value="KS">Kansas</option>
+<option value="KY">Kentucky</option>
+<option value="LA">Louisiana</option>
+<option value="ME">Maine</option>
+<option value="MB">Manitoba</option>
+<option value="MH">Marshall Islands</option>
+<option value="MD">Maryland</option>
+<option value="MA">Massachusetts</option>
+<option value="MI">Michigan</option>
+<option value="AA">Military in Americas</option>
+<option value="AE">Military in Europe</option>
+<option value="AP">Military in Pacific</option>
+<option value="MN">Minnesota</option>
+<option value="MS">Mississippi</option>
+<option value="MO">Missouri</option>
+<option value="MT">Montana</option>
+<option value="NE">Nebraska</option>
+<option value="NV">Nevada</option>
+<option value="NB">New Brunswick</option>
+<option value="NH">New Hampshire</option>
+<option value="NJ">New Jersey</option>
+<option value="NM">New Mexico</option>
+<option value="NY">New York</option>
+<option value="NF">Newfoundland</option>
+<option value="NC">North Carolina</option>
+<option value="ND">North Dakota</option>
+<option value="MP">Northern Mariana Is.</option>
+<option value="NT">Northwest Territory</option>
+<option value="NS">Nova Scotia</option>
+<option value="OH">Ohio</option>
+<option value="OK">Oklahoma</option>
+<option value="ON">Ontario</option>
+<option value="OR">Oregon</option>
+<option value="PW">Palau Island</option>
+<option value="PS">Palestine</option>
+<option value="PA">Pennsylvania</option>
+<option value="PE">Prince Edward Island</option>
+<option value="PR">Puerto Rico</option>
+<option value="QC">Quebec</option>
+<option value="RI">Rhode Island</option>
+<option value="SK">Saskatchewan</option>
+<option value="SC">South Carolina</option>
+<option value="SD">South Dakota</option>
+<option value="TN">Tennessee</option>
+<option value="TX">Texas</option>
+<option value="UT">Utah</option>
+<option value="VT">Vermont</option>
+<option value="VI">Virgin Islands</option>
+<option value="VA">Virginia</option>
+<option value="WA">Washington</option>
+<option value="WV">West Virginia</option>
+<option value="WI">Wisconsin</option>
+<option value="WY">Wyoming</option>
+<option value="YT">Yukon</option>
+
+</select>
+</td></tr><!-- component:end:home_state -->
+<!-- component:start:newline:home_zip -->
+<tr><td><label for="home_zip" class="optional"><!-- edittag.label.home_zip.start -->Postal&nbsp;Code:<!-- edittag.label.home_zip.end --></label></td><td style="vertical-align:top"><input type="text" name="home_zip" id="home_zip" value="" style="width:125px" maxlength="15"  ></td></tr><!-- component:end:home_zip -->
+<!-- component:start:newline:home_country -->
+<tr><td valign="top"><label for="home_country" class="required"><!-- edittag.label.home_country.start -->Country:&nbsp;*<!-- edittag.label.home_country.end --></label></td>
+<td style="vertical-align:top"><SELECT name="home_country" id="home_country"  size="1" >
+<OPTION value="">-- Select -- </OPTION>
+<option value="US">USA</option>
+<option value="AF">Afghanistan</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AG">Antigua &amp; Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BQ">Bonaire, Sint Eustatius &amp; Saba</option>
+<option value="BA">Bosnia &amp; Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BR">Brazil</option>
+<option value="VG">British Virgin Islands</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde Islands</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CE">Channel Islands</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CD">Congo, Democratic Republic of the</option>
+<option value="CG">Congo, Republic of the</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote D'ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Curacao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="EN">England</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="DE">Germany</option>
+<option value="GE">Georgia</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="VA">Holy See (Vatican City)</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="IC">Ivory Coast</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KP">Korea, Democratic People's Republic (North)</option>
+<option value="KR">Korea, Republic of (South)</option>
+<option value="KV">Kosovo</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgystan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macau</option>
+<option value="MK">Macedonia</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia, Federated States of</option>
+<option value="MD">Moldova Republic of</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="AN">Netherlands Antilles</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="ND">Northern Ireland</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestinian Territories</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn Island</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="RY">Ryukyu Islands</option>
+<option value="SH">Saint Helena</option>
+<option value="KN">Saint Kitts &amp; Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="PM">Saint Pierre &amp; Miquelon</option>
+<option value="VC">Saint Vincent &amp; The Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome &amp; Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SF">Scotland</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch Part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia &amp; So. Sandwich Islands</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Surinam</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad &amp; Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks &amp; Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="UM">US Minor Outlying Islands</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="VI">Virgin Islands</option>
+<option value="WA">Wales</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+
+</select>
+</td></tr><!-- component:end:home_country -->
+<!-- component:start:newline:phone_evening -->
+<tr><td><label for="phone_evening" class="optional"><!-- edittag.label.phone_evening.start -->Home&nbsp;Phone:<!-- edittag.label.phone_evening.end --></label></td><td style="vertical-align:top"><input type="text" name="phone_evening" id="phone_evening" value="" style="width:325px" maxlength="20"  ></td></tr><!-- component:end:phone_evening -->
+<!-- component:start:newline:DDC_business_phone -->
+<tr><td><label for="DDC_business_phone" class="optional"><!-- edittag.label.DDC_business_phone.start -->Business&nbsp;Phone:<!-- edittag.label.DDC_business_phone.end --></label></td><td style="vertical-align:top"><input type="text" name="DDC_business_phone" id="DDC_business_phone" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:DDC_business_phone -->
+<!-- component:start:newline:phone_day -->
+<tr><td><label for="phone_day" class="optional"><!-- edittag.label.phone_day.start -->Mobile&nbsp;Phone:<!-- edittag.label.phone_day.end --></label></td><td style="vertical-align:top"><input type="text" name="phone_day" id="phone_day" value="" style="width:325px" maxlength="20"  ></td></tr><!-- component:end:phone_day -->
+<!-- component:start:newline:home_email -->
+<tr><td><label for="home_email" class="required"><!-- edittag.label.home_email.start -->Email&nbsp;Address:&nbsp;*<!-- edittag.label.home_email.end --></label></td><td style="vertical-align:top"><input type="text" name="home_email" id="home_email" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:home_email -->
+<!-- component:start:newline:DDC_contact_info_change_radiolist -->
+<tr><td colspan="2"><label for="DDC_contact_info_change_radiolist" class="optional"><!-- edittag.label.DDC_contact_info_change_radiolist.start -->Has any of your contact information recently changed?<!-- edittag.label.DDC_contact_info_change_radiolist.end --></label></td></tr>
+<tr><td colspan="2">
+<!-- RADIO START -->
+<input type="radio" name="DDC_contact_info_change_radiolist" value="Y" id="Y"  >
+<label for="Y" class="optional">Yes</label><br>
+<input type="radio" name="DDC_contact_info_change_radiolist" value="N" id="N"  >
+<label for="N" class="optional">No</label><br>
+
+<!-- RADIO END -->
+</td></tr><!-- component:end:DDC_contact_info_change_radiolist -->
+<!-- component:start:newline:DDC_end_table --><tr><td colspan="2"><!-- edittag.html.DDC_end_table.start --></td></tr></table><!-- edittag.html.DDC_end_table.end -->
+</td></tr><!-- component:end:DDC_end_table -->
+<!-- component:start:newline:DDC_firstgift -->
+<tr><td colspan="2">
+<input type="checkbox"
+value=""  name="DDC_firstgift" id="DDC_firstgift"  ><label for="DDC_firstgift" class="optional"><!-- edittag.label.DDC_firstgift.start -->Check here if this is your first gift to Davidson College.<!-- edittag.label.DDC_firstgift.end --></label>
+</td></tr><!-- component:end:DDC_firstgift -->
+</table>
+<!-- section:end:personal -->
+
+<!-- section:start:gift -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" class="formSection" id="gift">
+<!-- component:start:newline:DDC_Gift_Designation --><tr><td colspan="2"><!-- edittag.html.DDC_Gift_Designation.start --><hr />
+<br />
+<span style="font-size: large"><strong><span style="font-family: Arial">Gift Designation (US $)</span></strong></span><span style="font-size: large"><strong><span style="font-family: Arial"><br />
+<br />
+</span></strong></span><!-- edittag.html.DDC_Gift_Designation.end -->
+</td></tr><!-- component:end:DDC_Gift_Designation -->
+<!-- component:start:newline:DDC_annual_fund --><tr><td colspan="2"><!-- edittag.html.DDC_annual_fund.start --><span style="font-size: large;"><span style="font-family: Arial;"><strong>The Fund for Davidson</strong></span></span>
+<!-- edittag.html.DDC_annual_fund.end -->
+</td></tr><!-- component:end:DDC_annual_fund -->
+<!-- component:start:newline:DDC_general_funds --><tr><td colspan="2"><!-- edittag.html.DDC_general_funds.start --> <span style="font-size: small;"><span style="font-family: Arial;"><strong>General Funds</strong></span></span>
+<!-- edittag.html.DDC_general_funds.end -->
+</td></tr><!-- component:end:DDC_general_funds -->
+<!-- component:start:newline:DDC_unrestricted -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_unrestricted" class="optional"><!-- edittag.label.DDC_unrestricted.start -->Unrestricted<!-- edittag.label.DDC_unrestricted.end --></label></span>
+<span style="float:right;display:inline-block;margin-right:0px">$</span></td>
+<td style="vertical-align:top"><input type="text" name="DDC_unrestricted" id="DDC_unrestricted" value="" style="width:75px" maxlength="10"   onblur="calcTotal()">
+</td></tr><!-- component:end:DDC_unrestricted -->
+<!-- component:start:newline:DDC_Access_affordability2 --><tr><td colspan="2"><!-- edittag.html.DDC_Access_affordability2.start --><span style="font-size: small;"><span style="font-family: Arial;"><strong>Access & Affordability</strong></span></span>
+<!-- edittag.html.DDC_Access_affordability2.end -->
+</td></tr><!-- component:end:DDC_Access_affordability2 -->
+<!-- component:start:newline:DDC_davidson_trust -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_davidson_trust" class="optional"><!-- edittag.label.DDC_davidson_trust.start -->The&nbsp;Davidson&nbsp;Trust<!-- edittag.label.DDC_davidson_trust.end --></label></span>
+<span style="float:right;display:inline-block;margin-right:0px">$</span></td>
+<td style="vertical-align:top"><input type="text" name="DDC_davidson_trust" id="DDC_davidson_trust" value="" style="width:75px" maxlength="10"   onblur="calcTotal()">
+</td></tr><!-- component:end:DDC_davidson_trust -->
+<!-- component:start:newline:DDC_experiential_learning2 --><tr><td colspan="2"><!-- edittag.html.DDC_experiential_learning2.start --><span style="font-size: small;"><span style="font-family: Arial;"><strong>Experiential Learning</strong></span></span>
+<!-- edittag.html.DDC_experiential_learning2.end -->
+</td></tr><!-- component:end:DDC_experiential_learning2 -->
+<!-- component:start:newline:DDC_research_initiatives -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_research_initiatives" class="optional"><!-- edittag.label.DDC_research_initiatives.start -->Research&nbsp;Initiatives<!-- edittag.label.DDC_research_initiatives.end --></label></span>
+<span style="float:right;display:inline-block;margin-right:0px">$</span></td>
+<td style="vertical-align:top"><input type="text" name="DDC_research_initiatives" id="DDC_research_initiatives" value="" style="width:75px" maxlength="10" onblur="calcTotal()">
+</td></tr><!-- component:end:DDC_research_initiatives -->
+<!-- component:start:newline:DDC_internships_fellowships -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_internships_fellowships" class="optional"><!-- edittag.label.DDC_internships_fellowships.start -->Internships&nbsp;and&nbsp;Fellowships<!-- edittag.label.DDC_internships_fellowships.end --></label></span>
+<span style="float:right;display:inline-block;margin-right:0px">$</span></td>
+<td style="vertical-align:top"><input type="text" name="DDC_internships_fellowships" id="DDC_internships_fellowships" value="" style="width:75px" maxlength="10" onblur="calcTotal()">
+</td></tr><!-- component:end:DDC_internships_fellowships -->
+<!-- component:start:newline:DDC_athletics2 --><tr><td colspan="2"><!-- edittag.html.DDC_athletics2.start --><span style="font-size: small;"><span style="font-family: Arial;"><strong>Athletics</strong></span></span>
+<!-- edittag.html.DDC_athletics2.end -->
+</td></tr><!-- component:end:DDC_athletics2 -->
+<!-- component:start:newline:DDC_davidson_athletic_foundation -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_davidson_athletic_foundation" class="optional"><!-- edittag.label.DDC_davidson_athletic_foundation.start -->Athletics&nbsp;-&nbsp;unrestricted<!-- edittag.label.DDC_davidson_athletic_foundation.end --></label></span>
+<span style="float:right;display:inline-block;margin-right:0px">$</span></td>
+<td style="vertical-align:top"><input type="text" name="DDC_davidson_athletic_foundation" id="DDC_davidson_athletic_foundation" value="" style="width:75px" maxlength="10" onblur="calcTotal()">
+</td></tr><!-- component:end:DDC_davidson_athletic_foundation -->
+<!-- component:start:newline:DDC_NCAA_division_team -->
+<tr><td><label for="DDC_NCAA_division_team" class="optional"><!-- edittag.label.DDC_NCAA_division_team.start --><I>(Specify&nbsp;NCAA&nbsp;Division&nbsp;I&nbsp;men's&nbsp;or&nbsp;women's&nbsp;team,&nbsp;if&nbsp;desired)</I><!-- edittag.label.DDC_NCAA_division_team.end --></label></td><td style="vertical-align:top"><input type="text" name="DDC_NCAA_division_team" id="DDC_NCAA_division_team" value="" style="width:320px" maxlength="50"  ></td></tr><!-- component:end:DDC_NCAA_division_team -->
+<!-- component:start:newline:DDC_arts2 --><tr><td colspan="2"><!-- edittag.html.DDC_arts2.start --><span style="font-size: small;"><span style="font-family: Arial;"><strong>Arts</strong></span></span>
+<!-- edittag.html.DDC_arts2.end -->
+</td></tr><!-- component:end:DDC_arts2 -->
+<!-- component:start:newline:DDC_FOTA -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_FOTA" class="optional"><!-- edittag.label.DDC_FOTA.start -->Visual,&nbsp;Literary,&nbsp;and&nbsp;Performing&nbsp;Arts<!-- edittag.label.DDC_FOTA.end --></label></span>
+<span style="float:right;display:inline-block;margin-right:0px">$</span></td>
+<td style="vertical-align:top"><input type="text" name="DDC_FOTA" id="DDC_FOTA" value="" style="width:75px" maxlength="10"   onblur="calcTotal()">
+</td></tr><!-- component:end:DDC_FOTA -->
+<!-- component:start:newline:DDC_wdav_public_radio -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_wdav_public_radio" class="optional"><!-- edittag.label.DDC_wdav_public_radio.start -->WDAV&nbsp;89.9&nbsp;Classical&nbsp;Public&nbsp;Radio:<!-- edittag.label.DDC_wdav_public_radio.end --></label></span>
+<span style="float:right;display:inline-block;margin-right:0px">$</span></td>
+<td style="vertical-align:top"><input type="text" name="DDC_wdav_public_radio" id="DDC_wdav_public_radio" value="" style="width:75px" maxlength="10"   onblur="calcTotal()">
+</td></tr><!-- component:end:DDC_wdav_public_radio -->
+<!-- component:start:newline:DDC_other2 --><tr><td colspan="2"><!-- edittag.html.DDC_other2.start --><span style="font-size: small;"><span style="font-family: Arial;"><strong>Other</strong></span></span>
+<!-- edittag.html.DDC_other2.end -->
+</td></tr><!-- component:end:DDC_other2 -->
+<!-- component:start:newline:DDC_designation_1 -->
+<tr><td><label for="DDC_designation_1" class="optional"><!-- edittag.label.DDC_designation_1.start -->Other&nbsp;Designation(s)&nbsp;Description:<!-- edittag.label.DDC_designation_1.end --></label></td><td style="vertical-align:top"><input type="text" name="DDC_designation_1" id="DDC_designation_1" value="" style="width:320px" maxlength="100"  ></td></tr><!-- component:end:DDC_designation_1 -->
+<!-- component:start:newline:DDC_designation_amount -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_designation_amount" class="optional"><!-- edittag.label.DDC_designation_amount.start -->Other&nbsp;Designation(s)&nbsp;Amount:<!-- edittag.label.DDC_designation_amount.end --></label></span>
+<span style="float:right;display:inline-block;margin-right:0px">$</span></td>
+<td style="vertical-align:top"><input type="text" name="DDC_designation_amount" id="DDC_designation_amount" value="" style="width:75px" maxlength="10" onblur="calcTotal()">
+</td></tr><!-- component:end:DDC_designation_amount -->
+<!-- component:start:newline:DDC_totalbillable2 -->
+<tr><td style="padding-right:0px"><span style="display:inline-block;float:left"><label for="DDC_totalbillable2" class="%%RESPONSE_TYPE%%"><!-- edittag.label.DDC_totalbillable2.start -->Total:<!-- edittag.label.DDC_totalbillable2.end --></label></span><span style="float:right;display:inline-block;margin-right:0px">$</span></td><td style="vertical-align:top"><input type="text" name="DDC_totalbillable2" id="DDC_totalbillable2" style="width:75px" readonly></td></tr><!-- component:end:DDC_totalbillable2 -->
+<!-- component:start:newline:DDC_comments2 -->
+<tr><td colspan="2"><label for="DDC_comments2" class="optional"><!-- edittag.label.DDC_comments2.start -->Comments<!-- edittag.label.DDC_comments2.end --></label><br>
+<textarea style="width:400px; height: 100px" name="DDC_comments2" 
+onKeyDown="formLimitTextbox(this.form.DDC_comments2,1000,document.getElementById('DDC_comments2_exceeded'));" 
+onKeyUp="formLimitTextbox(this.form.DDC_comments2,1000,document.getElementById('DDC_comments2_exceeded'));" ></textarea>
+<br><div id="DDC_comments2_exceeded" style="display: none"><span class="olc-error">You have reached the character limit for this input field (1000 characters).</span></div>
+</td></tr><!-- component:end:DDC_comments2 -->
+<!-- component:start:newline:DDC_alumnicouplesstmt --><tr><td colspan="2"><p><!-- edittag.text.DDC_alumnicouplesstmt.start -->For crediting purposes, unless otherwise instructed, gifts will be split evenly if married individuals are both Davidson College alumni.<!-- edittag.text.DDC_alumnicouplesstmt.end --></p></td></tr><!-- component:end:DDC_alumnicouplesstmt -->
+<!-- component:start:newline:DDC_The_amount_is --><tr><td colspan="2"><!-- edittag.html.DDC_The_amount_is.start --><span style="font-size: small;"><strong><br />
+</strong><span style="font-family: Arial;"><strong>Gift Type<br />
+</strong></span></span><!-- edittag.html.DDC_The_amount_is.end -->
+</td></tr><!-- component:end:DDC_The_amount_is -->
+<!-- component:start:newline:DDC_onetime_payment -->
+<tr><td colspan="2">
+<input type="checkbox"
+value=""  name="DDC_onetime_payment" id="DDC_onetime_payment"  ><label for="DDC_onetime_payment" class="optional"><!-- edittag.label.DDC_onetime_payment.start -->One-Time Payment<!-- edittag.label.DDC_onetime_payment.end --></label>
+</td></tr><!-- component:end:DDC_onetime_payment -->
+<!-- component:start:newline:DDC_recurring_monthly -->
+<tr><td colspan="2">
+<input type="checkbox"
+value=""  name="DDC_recurring_monthly" id="DDC_recurring_monthly"  onclick="RecurGift(this.form.name);"><label for="DDC_recurring_monthly" class="optional"><!-- edittag.label.DDC_recurring_monthly.start -->Recurring Draft<!-- edittag.label.DDC_recurring_monthly.end --></label>
+</td></tr><!-- component:end:DDC_recurring_monthly -->
+<!-- component:start:newline:DDC_recurring_drft_description --><tr><td colspan="2"><p><!-- edittag.text.DDC_recurring_drft_description.start -->Choose Billing Frequency and Number of Payments when choosing Recurring Draft option.<!-- edittag.text.DDC_recurring_drft_description.end --></p></td></tr><!-- component:end:DDC_recurring_drft_description -->
+<!-- component:start:newline:DDC_recurring_frequency -->
+<tr><td valign="top"><label for="DDC_recurring_frequency" class="optional"><!-- edittag.label.DDC_recurring_frequency.start -->Recurring Billing Frequency:<!-- edittag.label.DDC_recurring_frequency.end --></label></td>
+<td style="vertical-align:top"><SELECT name="DDC_recurring_frequency" id="DDC_recurring_frequency"  size="1"  >
+<OPTION value="">-- Select -- </OPTION>
+<option value="monthly">monthly</option>
+<option value="quarterly">quarterly</option>
+
+</select>
+</td></tr><!-- component:end:DDC_recurring_frequency -->
+<!-- component:start:newline:DDC_recur_num_payments -->
+<tr><td><label for="DDC_recur_num_payments" class="optional"><!-- edittag.label.DDC_recur_num_payments.start -->Number&nbsp;of&nbsp;Payments:<!-- edittag.label.DDC_recur_num_payments.end --></label><div style="clear:both;">(For example, if you want automatic monthly drafts for 1 year, enter 12. If you want automatic quarterly drafts for 2 years, enter 8.)</div>
+</td><td style="vertical-align:top"><input type="text" name="DDC_recur_num_payments" id="DDC_recur_num_payments" value="" style="width:25px" maxlength="2"  ></td></tr><!-- component:end:DDC_recur_num_payments -->
+</table>
+<!-- section:end:gift -->
+
+<!-- section:start:DDC20120406113541 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" class="formSection" id="DDC20120406113541">
+<!-- component:start:newline:DDC_Optional_Information --><tr><td colspan="2"><!-- edittag.html.DDC_Optional_Information.start --><span style="font-size: large"><span style="font-family: Arial"><strong>Optional Information</strong></span></span>
+<p><strong><span style="font-size: medium"><span style="font-family: Arial">Matching Gifts</span></span></strong><br />
+<br />
+<span style="font-size: small"><span style="font-family: Arial">Many companies match philanthropic gifts made by employees, their families, or retirees.</span></span></p>
+<p><a target="_blank" href="http://webapps.davidson.edu/annualfund/match_gift_search08.asp">See if your employer matches gifts</a><span style="font-size: small"><span style="font-family: Arial"> or check with your human resources department, obtain the appropriate form, and send it to: Davidson College, Donor Relations, Box 7174, Davidson, NC 28035-7174.</span></span></p><!-- edittag.html.DDC_Optional_Information.end -->
+</td></tr><!-- component:end:DDC_Optional_Information -->
+<!-- component:start:newline:matching_gift_indicator -->
+<tr><td colspan="2">
+<input type="checkbox"
+value=""  name="matching_gift_indicator" id="matching_gift_indicator" onclick="CompanyMatch(this.form.name) ;"><label for="matching_gift_indicator" class="optional"><!-- edittag.label.matching_gift_indicator.start -->I work for a matching gift company and will submit the form to Davidson.<!-- edittag.label.matching_gift_indicator.end --></label>
+</td></tr><!-- component:end:matching_gift_indicator -->
+<!-- component:start:newline:DDC_match_start_table --><tr><td colspan="2"><!-- edittag.html.DDC_match_start_table.start --><table id="match_gifts" cellpadding="4" style="width:100%;display:none;">
+<tr>
+<td width="445"><!-- edittag.html.DDC_match_start_table.end -->
+</td></tr><!-- component:end:DDC_match_start_table -->
+<!-- component:start:newline:matchinggift_companyname -->
+<tr><td><label for="matchinggift_companyname" class="optional"><!-- edittag.label.matchinggift_companyname.start -->Company&nbsp;Name:<!-- edittag.label.matchinggift_companyname.end --></label></td><td style="vertical-align:top"><input type="text" name="matchinggift_companyname" id="matchinggift_companyname" value="" style="width:325px" maxlength="100"  ></td></tr><!-- component:end:matchinggift_companyname -->
+<!-- component:start:newline:DDC_match_end_table --><tr><td colspan="2"><!-- edittag.html.DDC_match_end_table.start --> </td>
+</tr>
+</table><!-- edittag.html.DDC_match_end_table.end -->
+</td></tr><!-- component:end:DDC_match_end_table -->
+<!-- component:start:newline:DDC_other_ways_to_give --><tr><td colspan="2"><!-- edittag.html.DDC_other_ways_to_give.start --><strong><span style="font-size: medium;"><span style="font-family: Arial;"><br />
+Other Ways to Give</span></span></strong><!-- edittag.html.DDC_other_ways_to_give.end -->
+</td></tr><!-- component:end:DDC_other_ways_to_give -->
+<!-- component:start:newline:DDC_gifts_provide_income_checkbox -->
+<tr><td colspan="2">
+<input type="checkbox"
+value=""  name="DDC_gifts_provide_income_checkbox" id="DDC_gifts_provide_income_checkbox"  ><label for="DDC_gifts_provide_income_checkbox" class="optional"><!-- edittag.label.DDC_gifts_provide_income_checkbox.start -->I would like information about gifts which will also provide me income. (This option is most useful to donors aged 55 or older.)<!-- edittag.label.DDC_gifts_provide_income_checkbox.end --></label>
+</td></tr><!-- component:end:DDC_gifts_provide_income_checkbox -->
+<!-- component:start:newline:DDC_estate_plans_checkbox -->
+<tr><td colspan="2">
+<input type="checkbox"
+value=""  name="DDC_estate_plans_checkbox" id="DDC_estate_plans_checkbox" ><label for="DDC_estate_plans_checkbox" class="optional"><!-- edittag.label.DDC_estate_plans_checkbox.start -->I have already included Davidson in my estate plans.<!-- edittag.label.DDC_estate_plans_checkbox.end --></label>
+</td></tr><!-- component:end:DDC_estate_plans_checkbox -->
+<!-- component:start:newline:DDC_davidson_in_will_insurance_retirement_checkbox -->
+<tr><td colspan="2">
+<input type="checkbox"
+value=""  name="DDC_davidson_in_will_insurance_retirement_checkbox" id="DDC_davidson_in_will_insurance_retirement_checkbox" ><label for="DDC_davidson_in_will_insurance_retirement_checkbox" class="optional"><!-- edittag.label.DDC_davidson_in_will_insurance_retirement_checkbox.start -->I plan to include Davidson in my will, retirement plan, 401(K), or insurance policy.<!-- edittag.label.DDC_davidson_in_will_insurance_retirement_checkbox.end --></label>
+</td></tr><!-- component:end:DDC_davidson_in_will_insurance_retirement_checkbox -->
+</table>
+<!-- section:end:DDC20120406113541 -->
+
+<!-- section:start:payment -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" class="formSection" id="payment">
+<!-- component:start:newline:paymentheader -->
+<tr><td colspan="2" class="sectionHeader">Payment Information</td></tr>
+<!-- component:end:paymentheader -->
+<!-- component:start:newline:DDC_html_table --><tr><td colspan="2"><!-- edittag.html.DDC_html_table.start --> <table width="100%">
+<tr><td width="430"> </td><!-- edittag.html.DDC_html_table.end -->
+</td></tr><!-- component:end:DDC_html_table -->
+<!-- component:start:newline:cc_number -->
+<tr><td><label for="cc_number" class="required"><!-- edittag.label.cc_number.start -->Credit&nbsp;Card&nbsp;Number&nbsp;(no&nbsp;dashes):&nbsp;*<!-- edittag.label.cc_number.end --></label></td><td style="vertical-align:top"><input type="text" name="cc_number" id="cc_number" value="" style="width:325px" maxlength="20"  ></td></tr><!-- component:end:cc_number -->
+<!-- component:start:newline:cc_type -->
+<tr><td valign="top"><label for="cc_type" class="required"><!-- edittag.label.cc_type.start -->Credit Card Type:&nbsp;*<!-- edittag.label.cc_type.end --></label></td>
+<td style="vertical-align:top"><SELECT name="cc_type" id="cc_type"  size="1" >
+<OPTION value="">-- Select -- </OPTION>
+<option value="AmericanExpress">American Express</option>
+<option value="Discover">Discover</option>
+<option value="MasterCard">MasterCard</option>
+<option value="Visa">Visa</option>
+
+</select>
+</td></tr><!-- component:end:cc_type -->
+<!-- component:start:newline:cc_exp_month -->
+<tr><td valign="top"><label for="cc_exp_month" class="required"><!-- edittag.label.cc_exp_month.start -->Expiration Month:&nbsp;*<!-- edittag.label.cc_exp_month.end --></label></td>
+<td style="vertical-align:top"><SELECT name="cc_exp_month" id="cc_exp_month"  size="1" >
+<OPTION value="">-- Select -- </OPTION>
+<option value="01">January</option>
+<option value="02">February</option>
+<option value="03">March</option>
+<option value="04">April</option>
+<option value="05">May</option>
+<option value="06">June</option>
+<option value="07">July</option>
+<option value="08">August</option>
+<option value="09">September</option>
+<option value="10">October</option>
+<option value="11">November</option>
+<option value="12">December</option>
+
+</select>
+</td></tr><!-- component:end:cc_exp_month -->
+<!-- component:start:newline:cc_exp_year -->
+<tr><td valign="top"><label for="cc_exp_year" class="required"><!-- edittag.label.cc_exp_year.start -->Expiration Year:&nbsp;*<!-- edittag.label.cc_exp_year.end --></label></td>
+<td style="vertical-align:top"><SELECT name="cc_exp_year" id="cc_exp_year"  size="1" >
+<OPTION value="">-- Select -- </OPTION>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+
+</select>
+</td></tr><!-- component:end:cc_exp_year -->
+<!-- component:start:newline:cc_name_as_appears -->
+<tr><td><label for="cc_name_as_appears" class="required"><!-- edittag.label.cc_name_as_appears.start -->Name&nbsp;as&nbsp;it&nbsp;appears&nbsp;on&nbsp;credit&nbsp;card:&nbsp;*<!-- edittag.label.cc_name_as_appears.end --></label></td><td style="vertical-align:top"><input type="text" name="cc_name_as_appears" id="cc_name_as_appears" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:cc_name_as_appears -->
+<!-- component:start:newline:DDC_html_table_end --><tr><td colspan="2"><!-- edittag.html.DDC_html_table_end.start --></td></tr></table> <!-- edittag.html.DDC_html_table_end.end -->
+</td></tr><!-- component:end:DDC_html_table_end -->
+</table>
+<!-- section:end:payment -->
+
+<!-- section:start:home_address -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" class="formSection" id="home_address">
+<!-- component:start:newline:DDC_hm_add_table_start --><tr><td colspan="2"><!-- edittag.html.DDC_hm_add_table_start.start --> <table width="100%">
+<tr><td width="430"> </td><!-- edittag.html.DDC_hm_add_table_start.end -->
+</td></tr><!-- component:end:DDC_hm_add_table_start -->
+<!-- component:start:newline:home_address_header -->
+<tr><td colspan="2" class="sectionHeader">Billing Address</td></tr>
+<!-- component:end:home_address_header -->
+<!-- component:start:newline:DDC_reverse_address_copy -->
+<tr><td colspan="2">
+<input type="checkbox"
+value=""  name="DDC_reverse_address_copy" id="DDC_reverse_address_copy" onclick="reverseCopy()"><label for="DDC_reverse_address_copy" class="optional"><!-- edittag.label.DDC_reverse_address_copy.start -->Click here if your credit card billing address is the same as your preferred address.<!-- edittag.label.DDC_reverse_address_copy.end --></label>
+</td></tr><!-- component:end:DDC_reverse_address_copy -->
+<!-- component:start:newline:billing_address1 -->
+<tr><td><label for="billing_address1" class="required"><!-- edittag.label.billing_address1.start -->Billing&nbsp;Address:&nbsp;*<!-- edittag.label.billing_address1.end --></label></td><td style="vertical-align:top"><input type="text" name="billing_address1" id="billing_address1" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:billing_address1 -->
+<!-- component:start:newline:billing_address2 -->
+<tr><td><label for="billing_address2" class="optional"><!-- edittag.label.billing_address2.start -->Billing&nbsp;Address2:<!-- edittag.label.billing_address2.end --></label></td><td style="vertical-align:top"><input type="text" name="billing_address2" id="billing_address2" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:billing_address2 -->
+<!-- component:start:newline:billing_city -->
+<tr><td><label for="billing_city" class="required"><!-- edittag.label.billing_city.start -->Billing&nbsp;City:&nbsp;*<!-- edittag.label.billing_city.end --></label></td><td style="vertical-align:top"><input type="text" name="billing_city" id="billing_city" value="" style="width:325px" maxlength="50"  ></td></tr><!-- component:end:billing_city -->
+<!-- component:start:newline:billing_state -->
+<tr><td valign="top"><label for="billing_state" class="optional"><!-- edittag.label.billing_state.start -->Billing State:<!-- edittag.label.billing_state.end --></label></td>
+<td style="vertical-align:top"><SELECT name="billing_state" id="billing_state"  size="1" >
+<OPTION value="">-- Select -- </OPTION>
+<option value="AL">Alabama</option>
+<option value="AK">Alaska</option>
+<option value="AB">Alberta</option>
+<option value="AS">American Samoa</option>
+<option value="AZ">Arizona</option>
+<option value="AR">Arkansas</option>
+<option value="BC">British Columbia</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="DE">Delaware</option>
+<option value="DC">District of Columbia</option>
+<option value="FM">Fed St of Micronesia</option>
+<option value="FL">Florida</option>
+<option value="GA">Georgia</option>
+<option value="GU">Guam</option>
+<option value="HI">Hawaii</option>
+<option value="ID">Idaho</option>
+<option value="IL">Illinois</option>
+<option value="IN">Indiana</option>
+<option value="IA">Iowa</option>
+<option value="KS">Kansas</option>
+<option value="KY">Kentucky</option>
+<option value="LA">Louisiana</option>
+<option value="ME">Maine</option>
+<option value="MB">Manitoba</option>
+<option value="MH">Marshall Islands</option>
+<option value="MD">Maryland</option>
+<option value="MA">Massachusetts</option>
+<option value="MI">Michigan</option>
+<option value="AA">Military in Americas</option>
+<option value="AE">Military in Europe</option>
+<option value="AP">Military in Pacific</option>
+<option value="MN">Minnesota</option>
+<option value="MS">Mississippi</option>
+<option value="MO">Missouri</option>
+<option value="MT">Montana</option>
+<option value="NE">Nebraska</option>
+<option value="NV">Nevada</option>
+<option value="NB">New Brunswick</option>
+<option value="NH">New Hampshire</option>
+<option value="NJ">New Jersey</option>
+<option value="NM">New Mexico</option>
+<option value="NY">New York</option>
+<option value="NF">Newfoundland</option>
+<option value="NC">North Carolina</option>
+<option value="ND">North Dakota</option>
+<option value="MP">Northern Mariana Is.</option>
+<option value="NT">Northwest Territory</option>
+<option value="NS">Nova Scotia</option>
+<option value="OH">Ohio</option>
+<option value="OK">Oklahoma</option>
+<option value="ON">Ontario</option>
+<option value="OR">Oregon</option>
+<option value="PW">Palau Island</option>
+<option value="PS">Palestine</option>
+<option value="PA">Pennsylvania</option>
+<option value="PE">Prince Edward Island</option>
+<option value="PR">Puerto Rico</option>
+<option value="QC">Quebec</option>
+<option value="RI">Rhode Island</option>
+<option value="SK">Saskatchewan</option>
+<option value="SC">South Carolina</option>
+<option value="SD">South Dakota</option>
+<option value="TN">Tennessee</option>
+<option value="TX">Texas</option>
+<option value="UT">Utah</option>
+<option value="VT">Vermont</option>
+<option value="VI">Virgin Islands</option>
+<option value="VA">Virginia</option>
+<option value="WA">Washington</option>
+<option value="WV">West Virginia</option>
+<option value="WI">Wisconsin</option>
+<option value="WY">Wyoming</option>
+<option value="YT">Yukon</option>
+
+</select>
+</td></tr><!-- component:end:billing_state -->
+<!-- component:start:newline:billing_zip -->
+<tr><td><label for="billing_zip" class="optional"><!-- edittag.label.billing_zip.start -->Billing&nbsp;Postal&nbsp;Code:<!-- edittag.label.billing_zip.end --></label></td><td style="vertical-align:top"><input type="text" name="billing_zip" id="billing_zip" value="" style="width:125px" maxlength="15"  ></td></tr><!-- component:end:billing_zip -->
+<!-- component:start:newline:DDC_postcode_required --><tr><td colspan="2"><!-- edittag.html.DDC_postcode_required.start --><b><small><i>Postal Code required for US and Canada</small></i></b><!-- edittag.html.DDC_postcode_required.end -->
+</td></tr><!-- component:end:DDC_postcode_required -->
+<!-- component:start:newline:billing_country -->
+<tr><td valign="top"><label for="billing_country" class="required"><!-- edittag.label.billing_country.start -->Billing Country:&nbsp;*<!-- edittag.label.billing_country.end --></label></td>
+<td style="vertical-align:top"><SELECT name="billing_country" id="billing_country"  size="1" >
+<OPTION value="">-- Select -- </OPTION>
+<option value="US">USA</option>
+<option value="AF">Afghanistan</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AG">Antigua &amp; Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BQ">Bonaire, Sint Eustatius &amp; Saba</option>
+<option value="BA">Bosnia &amp; Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BR">Brazil</option>
+<option value="VG">British Virgin Islands</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde Islands</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CE">Channel Islands</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CD">Congo, Democratic Republic of the</option>
+<option value="CG">Congo, Republic of the</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote D'ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Curacao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="EN">England</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="DE">Germany</option>
+<option value="GE">Georgia</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="VA">Holy See (Vatican City)</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="IC">Ivory Coast</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KP">Korea, Democratic People's Republic (North)</option>
+<option value="KR">Korea, Republic of (South)</option>
+<option value="KV">Kosovo</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgystan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macau</option>
+<option value="MK">Macedonia</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia, Federated States of</option>
+<option value="MD">Moldova Republic of</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="AN">Netherlands Antilles</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="ND">Northern Ireland</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestinian Territories</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn Island</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="RY">Ryukyu Islands</option>
+<option value="SH">Saint Helena</option>
+<option value="KN">Saint Kitts &amp; Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="PM">Saint Pierre &amp; Miquelon</option>
+<option value="VC">Saint Vincent &amp; The Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome &amp; Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SF">Scotland</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch Part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia &amp; So. Sandwich Islands</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Surinam</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad &amp; Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks &amp; Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="UM">US Minor Outlying Islands</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="VI">Virgin Islands</option>
+<option value="WA">Wales</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+
+</select>
+</td></tr><!-- component:end:billing_country -->
+<!-- component:start:newline:DDC_hm_add_table_end --><tr><td colspan="2"><!-- edittag.html.DDC_hm_add_table_end.start --> </td></tr></table><!-- edittag.html.DDC_hm_add_table_end.end -->
+</td></tr><!-- component:end:DDC_hm_add_table_end -->
+</table>
+<!-- section:end:home_address -->
+
+<!-- == START == Submit Buttons  this is always at the end of the form. -->
+<!-- section:start:submitbutton -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" class="formSection">
+<tr>
+<td colspan="2">
+<input type="button" value="Submit My Gift" class="olc-formButton" name="submitButton" onclick="submitPressed();" >
+&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+
+<!-- section:end:submitbutton -->
+</td>
+</tr>
+</table>
+
+<!-- == END == Submit Buttons  this is always at the end of the form. --> 
+
+<!-- ================== DYNAMIC FORM ENDS HERE ============ -->
+
+</form>
+</div>
+				</td>
+				<!-- From contentarea121.html:  START -->
+<!-- Top Controlling Table -->
+		</tr>
+		</table>
+<!-- From contentarea121.html:  END -->
+
+<!-- ========================================== OLC Middle: End    -->
+</div>
+
+</body>
+</html>

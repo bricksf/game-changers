@@ -1,40 +1,65 @@
 <?php
-add_action( 'init', 'create_post_type_people' );
-function create_post_type_people() {
-	register_post_type( 'people',
-		array(
-			'labels' => array(
-				'name' => __( 'People' ),
-				'singular_name' => __( 'Person' ),
-				'add_new' => __( 'Add New' ),
-				'add_new_item' => __( 'Add New Person' ),
-				'edit' => __( 'Edit' ),
-				'edit_item' => __( 'Edit Person' ),
-				'new_item' => __( 'New Person' ),
-				'view' => __( 'View Person' ),
-				'view_item' => __( 'View Person' ),
-				'search_items' => __( 'Search People' ),
-				'not_found' => __( 'Nobody found' ),
-				'not_found_in_trash' => __( 'Nobody found in Trash' ),
-				'parent' => __( 'Parent Person' )
-			),
-		'description' => __( 'A Person is a type of content that is the most wonderful content in the world. There are no alternatives that match how insanely creative and beautiful it is.' ),
-		'public' => true,
-		'show_ui' => true,
-		'publicly_queryable' => true,
-		'exclude_from_search' => false,
-		'has_archive' => true,
-		'menu_position' => 11,
-		'show_in_nav_menus' => true,
-		'supports' => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies' => array(), // this is IMPORTANT
-		)
-	);
+
+function codex_custom_init() {
+    $args = array(
+      'public' => true,
+      'label'  => 'People',
+      'description' => __( 'A Person is a type of content that is the most wonderful content in the world. There are no alternatives that match how insanely creative and beautiful it is.' ),
+      'menu_position' => 11,
+      'has_archive' => true,
+      'supports' => array( 'title', 'editor', 'thumbnail' ),
+      'taxonomies' => array()
+    );
+    register_post_type( 'people', $args );
 }
+add_action( 'init', 'codex_custom_init' );
+
+// function create_post_type_people() {
+// 	register_post_type( 'people',
+// 		array(
+// 			'labels' => array(
+// 				'name' => __( 'People' ),
+// 				'singular_name' => __( 'Person' ),
+// 				'add_new' => __( 'Add New' ),
+// 				'add_new_item' => __( 'Add New Person' ),
+// 				'edit' => __( 'Edit' ),
+// 				'edit_item' => __( 'Edit Person' ),
+// 				'new_item' => __( 'New Person' ),
+// 				'view' => __( 'View Person' ),
+// 				'view_item' => __( 'View Person' ),
+// 				'search_items' => __( 'Search People' ),
+// 				'not_found' => __( 'Nobody found' ),
+// 				'not_found_in_trash' => __( 'Nobody found in Trash' ),
+// 				'parent' => __( 'Parent Person' )
+// 			),
+// 		'description' => __( 'A Person is a type of content that is the most wonderful content in the world. There are no alternatives that match how insanely creative and beautiful it is.' ),
+// 		'public' => true,
+// 		'capability_type' => 'people',
+// 		'capabilities' => array(
+// 				'publish_posts' => 'publish_people',
+// 				'edit_posts' => 'edit_people',
+// 				'edit_others_posts' => 'edit_others_people',
+// 				'delete_posts' => 'delete_people',
+// 				'delete_others_posts' => 'delete_others_people',
+// 				'read_private_posts' => 'read_private_people',
+// 				'edit_post' => 'edit_people',
+// 				'delete_post' => 'delete_people',
+// 				'read_post' => 'read_people',
+// 			),
+// 		'show_ui' => true,
+// 		'publicly_queryable' => true,
+// 		'exclude_from_search' => false,
+// 		'has_archive' => true,
+// 		'menu_position' => 11,
+// 		'show_in_nav_menus' => true,
+// 		'supports' => array( 'title', 'editor', 'thumbnail' ),
+// 		'taxonomies' => array(), // this is IMPORTANT
+// 		)
+// 	);
+// }
+// add_action( 'init', 'create_post_type_people' );
 
 
-// hook into the init action and call create_book_taxonomies() when it fires
-add_action( 'init', 'create_group_taxonomies', 0 );
 
 // create two taxonomies, genres and writers for the post type "book"
 function create_group_taxonomies() {
@@ -61,6 +86,9 @@ function create_group_taxonomies() {
 	));
 
 }
+
+// hook into the init action and call create_book_taxonomies() when it fires
+add_action( 'init', 'create_group_taxonomies', 0 );
 
 // Redo Admin Columns
 function add_new_people_columns($gallery_columns) {

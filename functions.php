@@ -25,13 +25,13 @@ remove_filter ('the_content', 'wpautop');
 /**
  * ACF Include on production
  */
-$name = $_SERVER['SERVER_NAME'];
+
 $host = $_SERVER['HTTP_HOST'];
-if($host == "gamechangers.brick.agency" or $host == "gamechangers.davidson.com" or $name == "gamechangers.brick.agency" or $name == "gamechangers.davidson.com" /* or $host == "gamechangers.wordpress.local" */ ) {
+if($host == "gamechangers.brick.agency" or $host == "gamechangers.davidson.edu" ) {
 	define( 'ACF_LITE' , true );
-	include_once locate_template('/inc/advanced-custom-fields/acf.php' );
-	include_once locate_template('/inc/acf-repeater/acf-repeater.php' );
-	include_once locate_template('/inc/advanced-custom-fields.php' );
+	require_once locate_template('/inc/advanced-custom-fields/acf.php' );
+	require_once locate_template('/inc/acf-repeater/acf-repeater.php' );
+	require_once locate_template('/inc/advanced-custom-fields.php' );
 }
 
 /**
@@ -132,6 +132,12 @@ function game_changers_scripts() {
 	}
 }
 //add_action( 'wp_enqueue_scripts', 'game_changers_scripts' );
+
+
+function new_excerpt_more( $more ) {
+	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'game-changers') . '</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 /**
  * Implement the Custom Header feature.

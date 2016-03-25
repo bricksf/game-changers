@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Game Changers Hompage
+Template Name: Game Changers Homepage
 */
 
 get_header();
@@ -14,8 +14,14 @@ get_header();
             // loop through the rows of data
             while ( have_rows('homepage_slide') ) : the_row();
                 // display a sub field value
-                $position = get_sub_field('text_position');
-                echo '<div class="slick-slide" style="background-image:url('.get_sub_field('slider_image').');"><div class="content-area"><div class="text-block '.$position[0].'"><p>'.get_sub_field('slider_text').'</p><a href="'.get_sub_field('slider_link').'" class="link">Read More</a></div></div></div>';
+                $pos = get_sub_field('text_position');
+                if(is_array($pos) && isset($pos[0]) && $pos[0]!="") {
+                    $pos = $pos[0];
+                }else{
+                    $pos = '';
+                }
+                $slider_image = get_sub_field('slider_image');
+                echo '<div class="slick-slide" style="background-image:url('.$slider_image.');"><div class="content-area"><div class="text-block '.$pos.'"><p>'.get_sub_field('slider_text').'</p><a href="'.get_sub_field('slider_link').'" class="link">Read More</a></div></div></div>';
             endwhile;
         else :
             // no rows found

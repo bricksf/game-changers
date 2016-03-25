@@ -12,7 +12,6 @@ function people_grid_shortcode( $atts, $content = null ){
 
 	$items = '';
 	$terms = get_terms('group');
-	print_r($term);
 
 	if($shownav){
 	    $items .= '<ul class="people-select">';
@@ -52,15 +51,15 @@ function people_grid_shortcode( $atts, $content = null ){
 		if($i==0){
 			$active = ' active';
 		}
+		$post_terms = '';
 		$post_terms_query = wp_get_post_terms( get_the_ID(), 'group' );
 		foreach ( $post_terms_query as $term ) {
     		$post_terms = $term->slug;
      	}
 
 		$items .= '<div class="block-4 person '.$post_terms.'">'."\r\n";
-		$post_terms = '';
 		$items .= '
-		<div class="flip-container" ontouchstart="this.classList.toggle(\'hover\');">'.
+		<div class="flip-container">'.
 			'<a href="'.get_permalink().'" class="flipper">'.
 				'<div class="front">'.
 				'<img src="'.$url.'" />'.
@@ -97,7 +96,7 @@ function blog_list_shortcode( $atts, $content = null ){
 	$args=array(
 		'post_type' => 'post',
 		'post_status' => 'publish',
-		'posts_per_page' => 5
+		'posts_per_page' => $count
 	);
 	query_posts($args);
 
@@ -107,7 +106,8 @@ function blog_list_shortcode( $atts, $content = null ){
 	query_posts($args);
 	while (have_posts()) : the_post();
 		$active = '';
-		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+		$att = get_post_thumbnail_id(get_the_ID());
+		$url = wp_get_attachment_url( $att );
 		if($i==0){
 			$active = ' active';
 		}
@@ -116,7 +116,7 @@ function blog_list_shortcode( $atts, $content = null ){
 		//$items .= '<img src="'.$url.'" />'."\r\n";
 		$items .= '</div>'."\r\n";
 		$items .= '<div class="body">';
-		$items .= '<h4>'.get_the_title().'</h4>';
+		$items .= '<h3><a href="'.get_permalink().'">'.get_the_title().'</a></h3>';
 		$items .= '<time>'.get_the_date('F j, Y').'</time>';
 		$items .= '<div class="excerpt">'.get_the_excerpt().'</div>';
 		$items .= '</div>'."\r\n";
@@ -234,7 +234,7 @@ function fluid_video_shortcode( $atts, $content = null ){
 	), $atts ) );
 
 	$output = '<div class="videoWrapper">'."\r\n";
-	$output .= '<iframe width="560" height="315" src="//www.youtube.com/embed/'.$code.'" frameborder="0" allowfullscreen></iframe>';
+	$output .= '<iframe src="//www.youtube.com/embed/'.$code.'?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>';
 	$output .= '</div>'."\r\n";
 
 

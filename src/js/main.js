@@ -11,7 +11,13 @@ var GameChangersSite = {
     home: {
 
         init: function() {
-            $('.slick').slick();
+            $('.slick').slick({
+                autoplay: true,
+                speed: 500,
+                fade: true,
+                autoplaySpeed: 4000,
+                cssEase: 'linear'
+            });
 
         },
         finalize: function() { }
@@ -41,6 +47,13 @@ var UTIL = {
 
 $(document).ready(UTIL.loadEvents);
 
+function isiPhone(){
+    return (
+        (navigator.platform.indexOf("iPhone") != -1) ||
+        (navigator.platform.indexOf("iPod") != -1)
+    );
+}
+
 (function(){
     $('.people-select li').each(function(i, v){
         $(v).on('click', function(e){
@@ -60,20 +73,29 @@ $(document).ready(UTIL.loadEvents);
         });
     });
     function pageloaded(){
-        $('.divider').each(function(){
-            var highestBox = 0;
-            $(this).find('.block-3').each(function(){
-                if($(this).height() > highestBox) 
-                   highestBox = $(this).height(); 
+        if(isiPhone()){
+            //dont't do resize
+        }else{
+            $('.divider').each(function(){
+                var highestBox = 0;
+                $(this).find('.block-3').each(function(){
+                    if($(this).height() > highestBox) 
+                       highestBox = $(this).height(); 
+                });
+                $(this).find('.block-3').height(highestBox);
             });
-            $(this).find('.block-3').height(highestBox);
-        });
+        }
     }
     $(window).load(function(){
         pageloaded();
+        if(window.location.hash){
+            $('html, body').animate({
+                scrollTop: $( window.location.hash ).offset().top
+            }, 500);
+        }
     });
 
-    $('.subnav a').click(function(){
+    $('a.autoscroll').click(function(){
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top
         }, 500);
@@ -81,7 +103,7 @@ $(document).ready(UTIL.loadEvents);
     });
 
     $('.menu-toggle').on('click', function(){
-        $('#menu-menu-1').toggleClass('show');
+        $('#menu-menu-1').slideToggle();
     });
 
 
@@ -89,10 +111,11 @@ $(document).ready(UTIL.loadEvents);
 
 $(function() {
     $('.easy-modal').easyModal({
-        top: 200,
-        overlay: 0.2
+        top: 50,
+        overlay: 0.2,
+        closeOnEscape: false,
     });
-    $('#site-navigation a[title="Recommend a Game Changer"]').click(function(e) {
+    $('a[title="Recommend a Game Changer"]').click(function(e) {
         var target = $(this).attr('href');
         $(target).trigger('openModal');
         e.preventDefault();

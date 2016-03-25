@@ -28,7 +28,6 @@ get_header(); ?>
 					 */
 					get_template_part( 'content', get_post_format() );
 				?>
-
 			<?php endwhile; ?>
 
 			<?php game_changers_paging_nav(); ?>
@@ -42,5 +41,8 @@ get_header(); ?>
 		</main><!-- #main -->
 		<?php get_sidebar(); ?>
 	</div><!-- #primary -->
+	<div class="center" style="clear:both;"><a href="#page" class="button red autoscroll">BACK TO TOP</a></div>
+	<br /><br /><br />
+
 
 <?php get_footer(); ?>
