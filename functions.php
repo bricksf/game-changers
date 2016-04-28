@@ -33,6 +33,7 @@ if($host == "gamechangers.brick.agency" or $host == "gamechangers.davidson.edu" 
 	require_once locate_template('/inc/acf-repeater/acf-repeater.php' );
 	require_once locate_template('/inc/advanced-custom-fields.php' );
 }
+	require_once locate_template('/inc/advanced-custom-fields.php' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.

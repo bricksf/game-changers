@@ -3,7 +3,7 @@
 function people_grid_shortcode( $atts, $content = null ){
 	extract( shortcode_atts( array(
 		'count' => '-1',
-		'group' => 'human-rights',
+		'group' => '',
 		'gallery' => '',
 		'style' => 'two',
 		'shownav' => false,
@@ -28,13 +28,13 @@ function people_grid_shortcode( $atts, $content = null ){
 			'post__in' => $post_ids,
 			'post_type' => 'people',
 			'post_status' => 'publish',
-			'posts_per_page' => $count,
+
 		);
 	}else{
 		$args=array(
 			'post_type' => 'people',
 			'post_status' => 'publish',
-			'posts_per_page' => $count,
+
 		);
 	}	
 	query_posts($args);
@@ -43,7 +43,6 @@ function people_grid_shortcode( $atts, $content = null ){
 	$i = 0;
 	$items .= '<div class="grid people-list">'."\r\n";
 
-	query_posts($args);
 	while (have_posts()) : the_post();
 		$active = '';
 		$url = get_field('grid_image');
@@ -75,13 +74,14 @@ function people_grid_shortcode( $atts, $content = null ){
 	endwhile;
 	wp_reset_query();
 	$items .= '</div>'."\r\n";
-
-
+$items .= '<button class="ajax-events">Load More</button>'."\r\n";
+//wp_enqueue_script( 'jquery' );
 	return $items;
 
 }
 
 add_shortcode( 'people_grid', 'people_grid_shortcode' );
+
 
 
 

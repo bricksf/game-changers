@@ -107,6 +107,34 @@ function isiPhone(){
     });
 
 
+    var page = 2;
+    $('.ajax-events').on('click', function(){
+        ajax_property(page);
+        page++;
+    });
+
+    function ajax_property(page){
+        var path = "/wp-content/themes/game-changers/";
+        console.log("Clicked");
+        $.ajax({
+            type: "GET",
+            url: path+'ajax-people.php'+'?page='+page,
+            beforeSend: function(){
+                $('.more-events').html('<div class="loader"><img src="/wp-content/themes/game-changers/src/img/loader.gif" /><br />Loading Events</div>');     
+            },
+            success: function(response){
+                console.log(response.length);
+                if(response.length > 2){
+                    $('.people-list').append(response);
+                    
+                }else{
+                    $('.ajax-events').hide();
+                }
+                
+            },
+        }); 
+    }
+
 })(jQuery);
 
 $(function() {
